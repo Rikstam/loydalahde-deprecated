@@ -19,3 +19,17 @@ $factory->define(App\User::class, function ($faker) {
         'remember_token' => str_random(10),
     ];
 });
+
+$factory->define(App\Spring::class, function ($faker) {
+    return [
+        'title' => $faker->name,
+        'tags'  => 'kirkas koski lapua',
+        'alias' => 'multsun lähde',
+        'description' => $faker->text,
+        'latitude' => $faker->latitude,
+        'longitude' => $faker->longitude,
+        'image' => $faker->imageUrl()
+
+    ];
+});
+
