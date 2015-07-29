@@ -14,6 +14,16 @@ class ExampleTest extends TestCase
     public function testBasicExample()
     {
         $this->visit('/')
-             ->see('Laravel 5');
+             ->see('Löydä lähde');
     }
+
+    public function testSearch()
+    {
+        $this->visit('/')
+             ->type('spring name', '#search')
+             ->press('Hae')
+             ->see('Hakutulokset termille "spring name"')
+             ->onPage('/hakutulokset');
+    }
+
 }

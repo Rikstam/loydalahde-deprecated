@@ -14,3 +14,7 @@
 Route::get('/', function () {
     return view('frontpage');
 });
+
+Route::post('hakutulokset', function(){
+    return sprintf('Hakutulokset termille "%s"', Request::input('search'));
+});

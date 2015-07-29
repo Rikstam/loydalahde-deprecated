@@ -18,9 +18,10 @@ class CreateSpringsTable extends Migration
             $table->string('title');
             $table->string('tags');
             $table->string('alias');
-            $table->text('history');
-
-
+            $table->text('description');
+            $table->decimal('latitude');
+            $table->decimal('longitude');
+            $table->string('image');
 
         });
     }
