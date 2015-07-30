@@ -1,7 +1,7 @@
 "use strict";
 
 var springs = [{
-    lat: 61.30337, lng: 23.797609, title: "Lempäälän lähde", page: "http://www.loydalahde.com/lempaalan-lahde/"
+    lat: 61.30337, lng: 23.797609, title: "Lempälän lähde", page: "http://www.loydalahde.com/lempaalan-lahde/"
 }, {
     lat: 61.49935, lng: 23.70976, title: "Tahmelan pikkulähde", page: "http://www.loydalahde.com/tahmelan-pikkulahde/"
 }, {

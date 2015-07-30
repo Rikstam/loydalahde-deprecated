@@ -1,7 +1,8 @@
 <?php
 
-use Illuminate\Database\Schema\Blueprint;
+//use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Phaza\LaravelPostgis\Schema\Blueprint;
 
 class CreateSpringsTable extends Migration
 {
@@ -19,8 +20,9 @@ class CreateSpringsTable extends Migration
             $table->string('tags');
             $table->string('alias');
             $table->text('description');
-            $table->decimal('latitude');
-            $table->decimal('longitude');
+            $table->point('location');
+            //$table->decimal('latitude',9,6);
+            //$table->decimal('longitude',9,6);
             $table->string('image');
 
         });

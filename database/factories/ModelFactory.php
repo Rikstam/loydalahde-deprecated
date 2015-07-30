@@ -26,8 +26,7 @@ $factory->define(App\Spring::class, function ($faker) {
         'tags'  => 'kirkas koski lapua',
         'alias' => 'multsun lähde',
         'description' => $faker->text,
-        'latitude' => $faker->latitude,
-        'longitude' => $faker->longitude,
+        'location' => new \Phaza\LaravelPostgis\Geometries\Point($faker->latitude, $faker->longitude),
         'image' => $faker->imageUrl()
 
     ];
