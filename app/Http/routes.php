@@ -18,7 +18,9 @@ Route::get('/', function () {
 Route::post('hakutulokset', function(){
     return sprintf('Hakutulokset termille "%s"', Request::input('search'));
 });
-
+/*
 Route::get('lahteet', function(){
     return view('springs.index')->with('springs', App\Spring::all());
-});
+});*/
+
+Route::get('lahteet', 'SpringController@index');

@@ -2,7 +2,6 @@
 
 use Illuminate\Database\Seeder;
 use Illuminate\Database\Eloquent\Model;
-use App\Spring;
 
 class DatabaseSeeder extends Seeder
 {
@@ -17,9 +16,11 @@ class DatabaseSeeder extends Seeder
 
         // $this->call(UserTableSeeder::class);
 
-        Spring::truncate();
+        //Spring::truncate();
 
-        factory(App\Spring::class,10)->create();
+        //factory(App\Spring::class,10)->create();
+
+        $this->call(SpringTableSeeder::class);
 
         Model::reguard();
     }

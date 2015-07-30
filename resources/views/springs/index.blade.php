@@ -14,7 +14,8 @@
                 <section class="">
 
                 <img src="{{ $spring->image }}" alt="" class="img-responsive">
-                    <p>{{ $spring->description }}</p>
+                    <p>{{ $spring->location }}</p>
+                    <p>{{ $spring->short_description }}</p>
                 </section>
             </article>
 
