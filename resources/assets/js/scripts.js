@@ -1,3 +1,8 @@
+
+var notification = require('./Notification');
+
+notification("jabadabaduu");
+
 var springs = [
     {
         lat:61.30337, lng: 23.797609, title: "Lempälän lähde", page:"http://www.loydalahde.com/lempaalan-lahde/"
@@ -63,4 +68,4 @@ var springs = [
 
 ];
 
-springs.forEach(spring => console.log(spring.title));
+//springs.forEach(spring => console.log(spring.title));
