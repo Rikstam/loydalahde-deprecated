@@ -17,6 +17,7 @@ elixir(function(mix) {
     //mix.babel('scripts.js');
     mix.browserify('scripts.js');
     //mix.phpUnit();
+    mix.version(['/css/app.css']);
 });
 
 /*

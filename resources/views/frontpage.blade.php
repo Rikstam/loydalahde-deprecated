@@ -17,5 +17,9 @@
                 </form>
             </div>
 
+            <section id="map" class="col-md-12">
+
+            </section>
+
         </div>
     @endsection
