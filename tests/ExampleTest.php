@@ -26,7 +26,7 @@ class ExampleTest extends TestCase
     {
         $this->visit('/')
              ->type('spring name', '#search')
-             ->press('Hae')
+             ->press('HAE')
              ->see('Hakutulokset termille "spring name"')
              ->onPage('/hakutulokset');
     }

@@ -13,7 +13,7 @@
 
                 <section class="">
 
-                <img src="{{ $spring->image }}" alt="" class="img-responsive">
+                <img src="{{ url('/')}}/img/{{ $spring->image }}" alt="" class="img-responsive">
                     <p>{{ $spring->location }}</p>
                     <p>{{ $spring->short_description }}</p>
                 </section>

@@ -1,0 +1,31 @@
+.prependedInput{
+  display:flex;
+}
+.searchField{
+  flex:1;
+}
+
+button.prepended{
+  border-radius: 0;
+}
+
+#call-to-action{
+
+  .slogan{
+    //position: absolute;
+    //top:40%;
+    width:420px;
+    margin:0px auto;
+    h1{
+      //color: #ffffff;
+      text-align: center;
+
+    }
+  }
+}
+
+#searchBox{
+  h2{
+    text-align: center;
+  }
+}

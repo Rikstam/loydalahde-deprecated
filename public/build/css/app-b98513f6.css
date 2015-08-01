@@ -5991,4 +5991,42 @@ button.close {
   .hidden-print {
     display: none !important; } }
 
+.navbar-brand {
+  padding-top: 3px; }
+  .navbar-brand h1 {
+    margin: 0;
+    font-size: 20px; }
+  .navbar-brand img {
+    float: left;
+    margin-right: 5px; }
+
+body {
+  font-family: 'Cabin', sans-serif; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 700; }
+
+.prependedInput {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex; }
+
+.searchField {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1; }
+
+button.prepended {
+  border-radius: 0; }
+
+#call-to-action .slogan {
+  width: 420px;
+  margin: 0px auto; }
+  #call-to-action .slogan h1 {
+    text-align: center; }
+
+#searchBox h2 {
+  text-align: center; }
+
 /*# sourceMappingURL=app.css.map */
