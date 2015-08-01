@@ -2,7 +2,7 @@
 
     @section('content')
 
-        <div class="top-banner">
+        <div id="top-banner">
 
             <div class="container">
 

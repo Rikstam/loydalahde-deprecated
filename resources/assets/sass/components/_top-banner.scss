@@ -9,6 +9,12 @@ button.prepended{
   border-radius: 0;
 }
 
+#top-banner{
+  background-image: url(../../img/water-2.jpg);
+  background-size: cover;
+  padding: 15em 0;
+}
+
 #call-to-action{
 
   .slogan{
@@ -17,7 +23,7 @@ button.prepended{
     width:420px;
     margin:0px auto;
     h1{
-      //color: #ffffff;
+      color: #ffffff;
       text-align: center;
 
     }
@@ -27,5 +33,6 @@ button.prepended{
 #searchBox{
   h2{
     text-align: center;
+    color: #ffffff;
   }
 }

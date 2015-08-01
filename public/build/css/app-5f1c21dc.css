@@ -5991,6 +5991,9 @@ button.close {
   .hidden-print {
     display: none !important; } }
 
+.navbar {
+  margin-bottom: 0; }
+
 .navbar-brand {
   padding-top: 3px; }
   .navbar-brand h1 {
@@ -6020,13 +6023,20 @@ h1, h2, h3, h4, h5, h6 {
 button.prepended {
   border-radius: 0; }
 
+#top-banner {
+  background-image: url(../../img/water-2.jpg);
+  background-size: cover;
+  padding: 15em 0; }
+
 #call-to-action .slogan {
   width: 420px;
   margin: 0px auto; }
   #call-to-action .slogan h1 {
+    color: #ffffff;
     text-align: center; }
 
 #searchBox h2 {
-  text-align: center; }
+  text-align: center;
+  color: #ffffff; }
 
 /*# sourceMappingURL=app.css.map */
