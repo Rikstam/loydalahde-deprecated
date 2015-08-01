@@ -24,3 +24,21 @@ Route::get('lahteet', function(){
 });*/
 
 Route::get('lahteet', 'SpringController@index');
+
+Route::get('oldsprings', function(){
+
+    $client = new \GuzzleHttp\Client(['base_uri' => 'http://loydalahde.com/wp-json/']);
+
+    $response = $client->get('posts?filter[posts_per_page]=-1');
+
+    //echo $response->getStatusCode();
+
+    $bod = json_decode($response->getBody());
+    //dd($bod);
+
+    foreach($bod as $spr){
+        echo $spr->title;
+    }
+
+    dd($bod);
+});

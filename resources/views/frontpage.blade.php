@@ -35,6 +35,7 @@
         </div>
 
         <div class="container">
+            <h1 id="mission-statement">Löydä lähde lähialueeltasi ja auta pitämään lähdevesi yhteisessä omistuksessa.</h1>
 
         <hr>
         

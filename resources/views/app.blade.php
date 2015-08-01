@@ -34,7 +34,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="#"><img src="{{ asset('/img/Kompassi_Logo.png') }}" class="img-responsive" alt="Löydä lähde" width="45">
+                    <a class="navbar-brand" href="/"><img src="{{ asset('/img/Kompassi_Logo.png') }}" class="img-responsive" alt="Löydä lähde" width="45">
                         <h1>Löydä lähde</h1></a>
                 </div>
 
