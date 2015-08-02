@@ -31,25 +31,29 @@ class ExampleTest extends TestCase
              ->onPage('/hakutulokset');
     }
 
-    public function it_displays_all_springs()
+    public function test_it_displays_all_springs()
     {
         $spring = factory(Spring::class)->create();
         $this->visit('lahteet')
             ->see($spring->title);
     }
 
-    public function it_displays_a_single_spring()
+    public function test_it_displays_a_single_spring()
     {
         $spring = factory(Spring::class)->create();
         $this->visit('lahteet/' . $spring->id)
              ->see($spring->title);
     }
-/*
-    public function it_creates_a_spring()
+
+    public function test_it_creates_a_spring()
     {
         $this->visit('admin/springs/create')
              ->type('Joku nimi', 'title')
-             ->type('sisältöä', 'description');
+             ->type('sisältöä', 'description')
+             ->check('visibility')
+             ->press('Julkaise')
+             ->see('Joku nimi')
+             ->onPage('lahteet');
     }
-*/
+
 }

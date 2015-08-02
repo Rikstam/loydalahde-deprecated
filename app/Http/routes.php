@@ -42,3 +42,9 @@ Route::get('oldsprings', function(){
 
     dd($bod);
 });
+
+
+//admin routing
+Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function(){
+    Route::resource('springs', 'SpringController');
+});
