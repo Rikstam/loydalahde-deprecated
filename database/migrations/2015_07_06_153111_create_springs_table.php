@@ -21,7 +21,8 @@ class CreateSpringsTable extends Migration
             $table->text('description');
             $table->text('short_description');
             $table->point('location');
-            $table->string('image');
+            $table->boolean('visibility')->defaul(true);
+            $table->string('image')->nullable();
 
         });
     }

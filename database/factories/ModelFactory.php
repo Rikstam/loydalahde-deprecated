@@ -26,6 +26,7 @@ $factory->define(App\Spring::class, function ($faker) {
         'alias' => 'multsun lähde',
         'description' => $faker->text,
         'short_description' => 'Veljesten nimet vanhimmasta nuorimpaan ovat: Juhani, Tuomas, Aapo, Simeoni, Timo, Lauri ja Eero. Ovat heistä Tuomas ja Aapo kaksoispari ja samoin Timo ja Lauri.',
+        'visibility' => true,
         'location' => new \Phaza\LaravelPostgis\Geometries\Point($faker->latitude, $faker->longitude),
         'image' => $faker->imageUrl()
 

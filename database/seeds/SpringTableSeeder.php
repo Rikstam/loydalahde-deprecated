@@ -24,6 +24,7 @@ class SpringTableSeeder extends Seeder
         $spring->description = 'Lähialueen ihmiset juovat vettä ympäri vuoden. Lähde on todennäköisesti yksi Suomen eniten hyödynnetyistä lähteistä ja paikanpäällä saattaa ajoittain joutua odottamaan hetken vuoroaan.';
         $spring->location = new \Phaza\LaravelPostgis\Geometries\Point(61.30337, 23.797609);
         $spring->image = 'Veljespirtti_Ohjeet.png';
+        $spring->visibility = true;
 
         $spring->save();
 
@@ -38,7 +39,7 @@ class SpringTableSeeder extends Seeder
         joissa, ennenkuin talo oli häviöön mennyt, aaltoili teräinen vilja.';
         $spring->location = new \Phaza\LaravelPostgis\Geometries\Point(60.226560, 25.123636);
         $spring->image = 'broandan-lahde.jpg';
-
+        $spring->visibility = true;
         $spring->save();
 
 

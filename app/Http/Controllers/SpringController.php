@@ -18,7 +18,10 @@ class SpringController extends Controller
     public function index()
     {
         //return Spring::all();
-        return view('springs.index')->with('springs', Spring::all());
+
+        $springs = Spring::where('visibility', true)->get();
+
+        return view('springs.index', compact('springs'));
     }
 
     /**

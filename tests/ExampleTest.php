@@ -44,5 +44,12 @@ class ExampleTest extends TestCase
         $this->visit('lahteet/' . $spring->id)
              ->see($spring->title);
     }
-
+/*
+    public function it_creates_a_spring()
+    {
+        $this->visit('admin/springs/create')
+             ->type('Joku nimi', 'title')
+             ->type('sisältöä', 'description');
+    }
+*/
 }
