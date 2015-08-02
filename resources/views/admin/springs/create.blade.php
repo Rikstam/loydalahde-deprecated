@@ -37,6 +37,29 @@
                         </div>
 
                         <div class="form-group">
+                            <label for="short_description" class="col-sm-2 control-label">Short Description</label>
+                            <div class="col-sm-10">
+                                <textarea name="short_description" rows="5" class="form-control" id="short_description">
+
+                                </textarea>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="latitude" class="col-sm-2 control-label">Latitude</label>
+                            <div class="col-sm-10">
+                                <input type="text" name="latitude" class="form-control" id="latitude" >
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="longitude" class="col-sm-2 control-label">Longitude</label>
+                            <div class="col-sm-10">
+                                <input type="text" name="longitude" class="form-control" id="longitude" >
+                            </div>
+                        </div>
+
+                        <div class="form-group">
 
 
                                 <label for="visibility" class="col-sm-2 control-label">

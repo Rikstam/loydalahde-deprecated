@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use App\spring;
+use Phaza\LaravelPostgis\Geometries\Point;
 
 class SpringController extends Controller
 {
@@ -38,7 +40,25 @@ class SpringController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $spring = new Spring();
+
+        $spring->title = $request->get('title');
+        $spring->alias = $request->get('alias');
+
+        $spring->description = $request->get('description');
+        $spring->short_description = $request->get('short_description');
+
+        $lat = $request->get('latitude');
+        $lng = $request->get('longitude');
+        $spring->location = new Point( $lat, $lng );
+
+        $spring->visibility = $request->get('visibility');
+
+        $spring->save();
+
+        return redirect('lahteet');
+
+
     }
 
     /**
