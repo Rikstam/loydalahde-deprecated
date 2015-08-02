@@ -49,6 +49,7 @@ class ExampleTest extends TestCase
     {
         $this->visit('admin/springs/create')
              ->type('Joku nimi', 'title')
+             ->type('kakkosnimi', 'alias')
              ->type('sisältöä', 'description')
              ->check('visibility')
              ->press('Julkaise')

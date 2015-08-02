@@ -26,7 +26,8 @@ class SpringController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.springs.create');
+
     }
 
     /**

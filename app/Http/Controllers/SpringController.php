@@ -31,7 +31,6 @@ class SpringController extends Controller
      */
     public function create()
     {
-        //
     }
 
     /**
