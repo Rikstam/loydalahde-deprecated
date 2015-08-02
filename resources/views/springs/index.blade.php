@@ -16,8 +16,9 @@
 
                 <img src="{{ url('/')}}/img/{{ $spring->image }}" alt="" class="img-responsive">
                     <p>{{ $spring->location }}</p>
-                    <p>{{ $spring->short_description }}</p>
+                    <a href="/lahteet/{{ $spring->id }}"><p>{{ $spring->short_description }}</p></a>
                 </section>
+
             </article>
 
 

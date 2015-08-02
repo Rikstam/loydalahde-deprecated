@@ -23,7 +23,7 @@ Route::get('lahteet', function(){
     return view('springs.index')->with('springs', App\Spring::all());
 });*/
 
-Route::get('lahteet', 'SpringController@index');
+Route::resource('lahteet', 'SpringController', ['only' => ['index', 'show']]);
 
 Route::get('oldsprings', function(){
 
