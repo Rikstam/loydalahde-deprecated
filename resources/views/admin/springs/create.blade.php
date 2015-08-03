@@ -21,11 +21,26 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="alias" class="col-sm-2 control-label">Alias</label>
+                            <label for="status" class="col-sm-2 control-label">Status</label>
                             <div class="col-sm-10">
                                 <input type="text" name="alias" class="form-control" id="alias" >
                             </div>
                         </div>
+
+                        <div class="form-group">
+                            <label for="status" class="col-sm-2 control-label">Status</label>
+                            <div class="col-sm-10">
+                                <select name="status" class="form-control" id="status" >
+                                    <option value="juomakelpoista">Juomakelpoista</option>
+                                    <option value="ei tietoa">Ei tietoa</option>
+
+                                    <option value="ei juomakelpoista">Ei juomakelpoista</option>
+
+                                </select>
+                            </div>
+                        </div>
+
+
 
                         <div class="form-group">
                             <label for="description" class="col-sm-2 control-label">Description</label>

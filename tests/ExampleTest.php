@@ -50,6 +50,7 @@ class ExampleTest extends TestCase
         $this->visit('admin/springs/create')
              ->type('Joku nimi', 'title')
              ->type('kakkosnimi', 'alias')
+             ->select('juomakelpoista','status')
              ->type('sisältöä', 'description')
              ->type('excerptti tähän','short_description')
              ->type('60.226560', 'latitude')

@@ -44,10 +44,9 @@ class SpringController extends Controller
 
         $spring->title = $request->get('title');
         $spring->alias = $request->get('alias');
-
+        $spring->status = $request->get('status');
         $spring->description = $request->get('description');
         $spring->short_description = $request->get('short_description');
-
         $lat = $request->get('latitude');
         $lng = $request->get('longitude');
         $spring->location = new Point( $lat, $lng );

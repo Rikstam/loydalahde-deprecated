@@ -18,6 +18,7 @@ class CreateSpringsTable extends Migration
             $table->timestamps();
             $table->string('title');
             $table->string('alias');
+            $table->enum('status',['juomakelpoista', 'ei tietoa', 'ei juomakelpoista'])->default('ei tietoa');
             $table->text('description');
             $table->text('short_description');
             $table->point('location');
