@@ -21,6 +21,7 @@ class SpringTableSeeder extends Seeder
         $spring->title = 'Lempäälän lähde';
         $spring->alias = 'Veljespirtin lähde';
         $spring->status = 'juomakelpoista';
+        $spring->tested_at = '10-11-1981';
 
         $spring->short_description = 'Lempäälän kunnan ympäristötarkastaja Sippo Saarisen mukaan lähde on rengastettu 1987, jonka jälkeen käyttö on ollut aktiivista. Tätä aiemmasta lähteen käyttöhistoriasta ei tarkempaa tietoa. Lähialueen ihmiset juovat vettä ympäri vuoden. Lähde on todennäköisesti yksi Suomen eniten hyödynnetyistä lähteistä ja paikanpäällä saattaa ajoittain joutua odottamaan hetken vuoroaan.';
         $spring->description = 'Lähialueen ihmiset juovat vettä ympäri vuoden. Lähde on todennäköisesti yksi Suomen eniten hyödynnetyistä lähteistä ja paikanpäällä saattaa ajoittain joutua odottamaan hetken vuoroaan.';

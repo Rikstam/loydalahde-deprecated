@@ -40,6 +40,13 @@
                             </div>
                         </div>
 
+                        <div class="form-group">
+                            <label for="tested_at" class="col-sm-2 control-label">Tested</label>
+                            <div class="col-sm-10">
+                                <input type="date" name="tested_at" class="form-control" id="tested_at" >
+                            </div>
+                        </div>
+
 
 
                         <div class="form-group">

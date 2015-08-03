@@ -45,6 +45,7 @@ class SpringController extends Controller
         $spring->title = $request->get('title');
         $spring->alias = $request->get('alias');
         $spring->status = $request->get('status');
+        $spring->tested_at = $request->get('tested_at');
         $spring->description = $request->get('description');
         $spring->short_description = $request->get('short_description');
         $lat = $request->get('latitude');

@@ -9,6 +9,8 @@
                 <header>
                     <h2>{{ $spring->title }}</h2>
                     <h3>{{ $spring->alias }}</h3>
+                    <p class="bg-info">{{ $spring->status }}</p>
+
                 </header>
 
 

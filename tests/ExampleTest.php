@@ -36,6 +36,7 @@ class ExampleTest extends TestCase
         $spring = factory(Spring::class)->create();
         $this->visit('lahteet')
             ->see($spring->title);
+
     }
 
     public function test_it_displays_a_single_spring()
@@ -51,6 +52,7 @@ class ExampleTest extends TestCase
              ->type('Joku nimi', 'title')
              ->type('kakkosnimi', 'alias')
              ->select('juomakelpoista','status')
+             ->type('10-11-1981', 'tested_at')
              ->type('sisältöä', 'description')
              ->type('excerptti tähän','short_description')
              ->type('60.226560', 'latitude')
