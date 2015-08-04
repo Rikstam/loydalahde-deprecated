@@ -17,6 +17,33 @@ class SpringTableSeeder extends Seeder
 
         //$faker = Faker\Factory::create();
 
+        $client = new \GuzzleHttp\Client(['base_uri' => 'http://loydalahde.com/wp-json/']);
+
+        $response = $client->get('posts?filter[posts_per_page]=-1');
+
+        //echo $response->getStatusCode();
+
+        $bod = json_decode($response->getBody());
+        //dd($bod);
+
+        foreach($bod as $spr){
+            $spring = new Spring();
+            $spring->title = $spr->title;
+            $spring->alias = 'Veljespirtin lähde';
+            $spring->status = 'ei tietoa';
+
+
+            $spring->short_description = $spr->excerpt;
+            $spring->location = new \Phaza\LaravelPostgis\Geometries\Point(61.30337, 23.797609);
+            $spring->description = $spr->content;
+            //$spring->image = 'Veljespirtti_Ohjeet.png';
+            $spring->visibility = true;
+
+            $spring->save();
+        }
+
+
+        /*
         $spring = new Spring();
         $spring->title = 'Lempäälän lähde';
         $spring->alias = 'Veljespirtin lähde';
@@ -46,7 +73,7 @@ class SpringTableSeeder extends Seeder
         $spring->visibility = true;
         $spring->save();
 
-
+*/
         /*
         DB::table('springs')->insert([
             'title' => 'Lempäälän lähde',
