@@ -6042,4 +6042,8 @@ button.prepended {
 #mission-statement {
   text-align: center; }
 
+#mapcontainer {
+  height: 500px;
+  margin-bottom: 100px; }
+
 /*# sourceMappingURL=app.css.map */

@@ -124,6 +124,9 @@
         <div class="row">
             <section id="map" class="col-md-12">
                 <h2>Kaikki lähteet kartalla</h2>
+                <div id="mapcontainer">
+
+                </div>
 
             </section>
         </div>
