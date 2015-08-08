@@ -17,11 +17,11 @@ class SpringController extends Controller
      */
     public function index()
     {
-        //return Spring::all();
+        return Spring::all();
 
-        $springs = Spring::where('visibility', true)->get();
+        //$springs = Spring::where('visibility', true)->get();
 
-        return view('springs.index', compact('springs'));
+        //return view('springs.index', compact('springs'));
     }
 
     /**

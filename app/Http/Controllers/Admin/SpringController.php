@@ -18,7 +18,9 @@ class SpringController extends Controller
      */
     public function index()
     {
-        //
+        $springs = Spring::all();
+
+        return view('admin.springs.index', compact('springs'));
     }
 
     /**
