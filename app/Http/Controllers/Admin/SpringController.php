@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\spring;
-use Requests\SpringRequest;
+use App\Http\Requests\SpringRequest;
 use Phaza\LaravelPostgis\Geometries\Point;
 
 class SpringController extends Controller
@@ -41,7 +41,7 @@ class SpringController extends Controller
      * @param  Request  $request
      * @return Response
      */
-    public function store(Request $request)
+    public function store(SpringRequest $request)
     {
         $spring = new Spring();
 
@@ -85,6 +85,8 @@ class SpringController extends Controller
     {
         $spring = Spring::findOrFail($id);
 
+        //dd($spring);
+
         return view('admin.springs.edit', compact('spring'));
     }
 
@@ -95,7 +97,7 @@ class SpringController extends Controller
      * @param  int  $id
      * @return Response
      */
-    public function update(Request $request, $id)
+    public function update(SpringRequest $request, $id)
     {
         $spring = Spring::findOrFail($id);
 

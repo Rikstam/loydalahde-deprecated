@@ -10,7 +10,7 @@
 
         <h2>Järjestelmässä yhteensä: {{count($springs)}} lähdettä.  </h2>
 
-        <a class="btn btn-default" href="create">Lisää uusi</a>
+        <a class="btn btn-default" href="/admin/springs/create">Lisää uusi</a>
 
         <table class="table table-striped">
             <thead>
