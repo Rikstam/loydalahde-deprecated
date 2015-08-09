@@ -15,7 +15,7 @@
         <table class="table table-striped">
             <thead>
             <tr>
-                <th>#</th><th>Name</th><th>Status</th><th>Visibility</th><th>&nbsp;</th>
+                <th>#</th><th>Nimi</th><th>Koordinaatit</th><th>Status</th><th>Näkyvyys</th><th>&nbsp;</th>
             </tr>
             </thead>
             <tbody>
@@ -23,6 +23,11 @@
                 <tr>
                 <td>{{ $spring->id }}</td>
                 <td><a href="/lahteet/{{ $spring->id }}">{{ $spring->title }}</a></td>
+                    @if ($spring->location)
+                        <td class="success">Kyllä</td>
+                        @else
+                        <td class="warning">Ei</td>
+                    @endif
 
                     @if ($spring->status == 'ei tietoa')
                     <td class="warning">{{ $spring->status}}</td>
@@ -34,7 +39,7 @@
                         <td class="active">Piilossa / <a href="">Näytä</a></td>
 
                     @endif
-                    <td><a class="btn btn-primary">Muokkaa</a></td>
+                    <td><a href="{{$spring->id}}/edit" class="btn btn-primary">Muokkaa</a></td>
                 </tr>
              @endforeach
 

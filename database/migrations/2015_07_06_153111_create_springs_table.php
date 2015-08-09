@@ -17,12 +17,12 @@ class CreateSpringsTable extends Migration
             $table->increments('id');
             $table->timestamps();
             $table->string('title');
-            $table->string('alias');
+            $table->string('alias')->nullable();
             $table->enum('status',['juomakelpoista', 'ei tietoa', 'ei juomakelpoista'])->default('ei tietoa');
             $table->date('tested_at')->nullable();
             $table->text('description');
             $table->text('short_description');
-            $table->point('location');
+            $table->point('location')->nullable();
             $table->boolean('visibility')->defaul(true);
             $table->string('image')->nullable();
 

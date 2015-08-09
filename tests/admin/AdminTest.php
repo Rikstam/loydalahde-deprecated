@@ -16,10 +16,17 @@ class AdminTest extends TestCase
     *
     * @return void
     */
-    public function testFrontpage()
+    public function testSpringsAreIndexed()
     {
         $this->visit('/admin/springs')
         ->see('Kaikki lähteet');
+    }
+
+    public function testSpringEdit()
+    {
+        $spring = factory(Spring::class)->create();
+        $this->visit('/admin/springs/' . $spring->id . '/edit')
+            ->see($spring->title);
     }
 
 }

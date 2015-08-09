@@ -15,8 +15,6 @@ class SpringTableSeeder extends Seeder
     public function run()
     {
 
-        //$faker = Faker\Factory::create();
-
         $client = new \GuzzleHttp\Client(['base_uri' => 'http://loydalahde.com/wp-json/']);
 
         $response = $client->get('posts?filter[posts_per_page]=-1');
@@ -24,17 +22,16 @@ class SpringTableSeeder extends Seeder
         //echo $response->getStatusCode();
 
         $bod = json_decode($response->getBody());
-        //dd($bod);
 
         foreach($bod as $spr){
             $spring = new Spring();
             $spring->title = $spr->title;
-            $spring->alias = 'Veljespirtin lähde';
+            //$spring->alias = 'Veljespirtin lähde';
             $spring->status = 'ei tietoa';
 
 
             $spring->short_description = $spr->excerpt;
-            $spring->location = new \Phaza\LaravelPostgis\Geometries\Point(61.30337, 23.797609);
+            //$spring->location = new \Phaza\LaravelPostgis\Geometries\Point(61.30337, 23.797609);
             $spring->description = $spr->content;
             //$spring->image = 'Veljespirtti_Ohjeet.png';
             $spring->visibility = true;
@@ -42,46 +39,5 @@ class SpringTableSeeder extends Seeder
             $spring->save();
         }
 
-
-        /*
-        $spring = new Spring();
-        $spring->title = 'Lempäälän lähde';
-        $spring->alias = 'Veljespirtin lähde';
-        $spring->status = 'juomakelpoista';
-        $spring->tested_at = '10-11-1981';
-
-        $spring->short_description = 'Lempäälän kunnan ympäristötarkastaja Sippo Saarisen mukaan lähde on rengastettu 1987, jonka jälkeen käyttö on ollut aktiivista. Tätä aiemmasta lähteen käyttöhistoriasta ei tarkempaa tietoa. Lähialueen ihmiset juovat vettä ympäri vuoden. Lähde on todennäköisesti yksi Suomen eniten hyödynnetyistä lähteistä ja paikanpäällä saattaa ajoittain joutua odottamaan hetken vuoroaan.';
-        $spring->description = 'Lähialueen ihmiset juovat vettä ympäri vuoden. Lähde on todennäköisesti yksi Suomen eniten hyödynnetyistä lähteistä ja paikanpäällä saattaa ajoittain joutua odottamaan hetken vuoroaan.';
-        $spring->location = new \Phaza\LaravelPostgis\Geometries\Point(61.30337, 23.797609);
-        $spring->image = 'Veljespirtti_Ohjeet.png';
-        $spring->visibility = true;
-
-        $spring->save();
-
-        $spring = new Spring();
-        $spring->title = 'Broandan lähde, Helsinki';
-        $spring->alias = 'Viikinlähde';
-        $spring->status = 'ei tietoa';
-        $spring->description = "<p>Aja Tankovainiontien päässä olevalle parkkipaikalle. Vasemmalla puolella näkyy iso siirtolohkare, jonka vierellä lähdekaivo sijaitsee.</p>";
-        $spring->short_description = 'Jukolan talo, eteläisessä Hämeessä,
-        seisoo erään mäen pohjoisella rinteellä, liki Toukolan kylää.
-        Sen läheisin ym­päristö on kivinen tanner,
-        mutta alempana alkaa pellot,
-        joissa, ennenkuin talo oli häviöön mennyt, aaltoili teräinen vilja.';
-        $spring->location = new \Phaza\LaravelPostgis\Geometries\Point(60.226560, 25.123636);
-        $spring->image = 'broandan-lahde.jpg';
-        $spring->visibility = true;
-        $spring->save();
-
-*/
-        /*
-        DB::table('springs')->insert([
-            'title' => 'Lempäälän lähde',
-            'tags' => 'juomakelpoinen testattu',
-            'alias' => 'Veljespirtin lähde',
-            'description' => '',
-            'location' => ,
-            'image' => $faker->imageUrl()
-        ]);*/
     }
 }

@@ -82,7 +82,9 @@ class SpringController extends Controller
      */
     public function edit($id)
     {
-        //
+        $spring = Spring::findOrFail($id);
+
+        return view('admin.springs.edit', compact('spring'));
     }
 
     /**

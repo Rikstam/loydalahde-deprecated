@@ -96,9 +96,16 @@
 
 
                         <div class="form-group">
-                            <div class="col-sm-offset-2 col-sm-10">
+
+                            <div class="col-sm-offset-2 col-sm-2">
+                                <button type="submit" class="btn btn-primary" onclick="history.back(-1)">Takaisin</button>
+                            </div>
+
+                            <div class="col-sm-2">
                                 <button type="submit" class="btn btn-default">Julkaise</button>
                             </div>
+
+
                         </div>
 
 
