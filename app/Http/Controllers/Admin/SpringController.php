@@ -18,7 +18,7 @@ class SpringController extends Controller
      */
     public function index()
     {
-        $springs = Spring::all();
+        $springs = Spring::orderBy('updated_at','desc')->get();
 
         return view('admin.springs.index', compact('springs'));
     }
@@ -96,7 +96,24 @@ class SpringController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $spring = Spring::findOrFail($id);
+
+        $spring->title = $request->get('title');
+        $spring->alias = $request->get('alias');
+        $spring->status = $request->get('status');
+        $spring->tested_at = $request->get('tested_at');
+        $spring->description = $request->get('description');
+        $spring->short_description = $request->get('short_description');
+        $lat = $request->get('latitude');
+        $lng = $request->get('longitude');
+        $spring->location = new Point( $lat, $lng );
+
+        $spring->visibility = $request->get('visibility');
+
+        $spring->save();
+
+        return redirect('admin/springs');
+
     }
 
     /**

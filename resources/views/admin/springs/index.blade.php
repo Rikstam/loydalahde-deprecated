@@ -30,7 +30,14 @@
                     @endif
 
                     @if ($spring->status == 'ei tietoa')
-                    <td class="warning">{{ $spring->status}}</td>
+
+                        <td class="warning">{{ $spring->status}}</td>
+                        @elseif ($spring->status == 'ei juomakelpoista')
+                        <td class="danger">{{ $spring->status}}</td>
+                        @elseif ($spring->status == 'juomakelpoista')
+                        <td class="success">{{ $spring->status}}</td>
+
+
                     @endif
 
                     @if ($spring->visibility == 1)
@@ -39,7 +46,7 @@
                         <td class="active">Piilossa / <a href="">Näytä</a></td>
 
                     @endif
-                    <td><a href="{{$spring->id}}/edit" class="btn btn-primary">Muokkaa</a></td>
+                    <td><a href="/admin/springs/{{$spring->id}}/edit" class="btn btn-primary">Muokkaa</a></td>
                 </tr>
              @endforeach
 

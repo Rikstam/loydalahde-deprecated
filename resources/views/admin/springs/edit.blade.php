@@ -26,7 +26,7 @@
 
 
 
-            {!!  Form::model($spring,['route' =>['admin.springs.update', $spring->id], 'class' => 'form-horizontal']) !!}
+            {!!  Form::model($spring,['method' => 'PATCH','route' =>['admin.springs.update', $spring->id], 'class' => 'form-horizontal']) !!}
 
                 <div class="form-group">
 
@@ -82,25 +82,28 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="short_description" class="col-sm-2 control-label">Short Description</label>
+                    {!! Form::label('short_description', 'Short Description:', ['class' => 'col-sm-2 control-label']) !!}
                     <div class="col-sm-10">
-                                <textarea name="short_description" rows="5" class="form-control" id="short_description">
+                        {!! Form::textarea('short_description', null, ['class' => 'form-control', 'id' => 'short_description'] ) !!}
 
-                                </textarea>
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <label for="latitude" class="col-sm-2 control-label">Latitude</label>
+
+                    {!! Form::label('latitude', 'Latitude:', ['class' => 'col-sm-2 control-label']) !!}
+
+
                     <div class="col-sm-10">
-                        <input type="text" name="latitude" class="form-control" id="latitude" >
+                        {!! Form::text('latitude', null, ['class' => 'form-control', 'id' => 'latitude'] ) !!}
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <label for="longitude" class="col-sm-2 control-label">Longitude</label>
+                    {!! Form::label('longitude', 'Longitude:', ['class' => 'col-sm-2 control-label']) !!}
+
                     <div class="col-sm-10">
-                        <input type="text" name="longitude" class="form-control" id="longitude" >
+                        {!! Form::text('longitude', null, ['class' => 'form-control', 'id' => 'longitude'] ) !!}
                     </div>
                 </div>
 
