@@ -9,54 +9,75 @@
         <div class="col-md-6">
             <h1>Muokkaa lähdettä</h1>
             <h2>{{ $spring->title }}</h2>
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>Luotu</th>
+                    <th>Viimeksi muokattu</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr><td>{{ $spring->created_at }}
+                    <td>{{ $spring->updated_at }}</td>
+                </tr>
+                </tbody>
+
+            </table>
 
 
-            {!!  Form::model($spring,['route' =>'spring.edit', $spring->id]) !!}
 
-
+            {!!  Form::model($spring,['route' =>['admin.springs.update', $spring->id], 'class' => 'form-horizontal']) !!}
 
                 <div class="form-group">
-                    <label for="title" class="col-sm-2 control-label">Title</label>
+
+                    {!! Form::label('title', 'Title:', ['class' => 'col-sm-2 control-label']) !!}
                     <div class="col-sm-10">
-                        <input type="text" name="title" class="form-control" id="title" >
+                    {!! Form::text('title', null, ['class' => 'form-control', 'id' => 'title'] ) !!}
+                    </div>
+
+                </div>
+
+                <div class="form-group">
+                    {!! Form::label('alias', 'Alias:', ['class' => 'col-sm-2 control-label']) !!}
+                    <div class="col-sm-10">
+                        {!! Form::text('alias', null, ['class' => 'form-control', 'id' => 'alias'] ) !!}
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <label for="status" class="col-sm-2 control-label">Status</label>
+                    {!! Form::label('status','Status',['class' => 'col-sm-2 control-label']) !!}
                     <div class="col-sm-10">
-                        <input type="text" name="alias" class="form-control" id="alias" >
+
+                        {!! Form::select('status',
+                        ['juomakelpoista' => 'Juomakelpoista',
+                        'ei tietoa' => 'Ei tietoa',
+                        'ei juomakelpoista' => 'Ei juomakelpoista'],
+                        null,
+                        ['class' => 'form-control', 'id' => 'status'])
+                        !!}
+
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <label for="status" class="col-sm-2 control-label">Status</label>
+                    {!! Form::label('tested_at','Tested',['class' => 'col-sm-2 control-label']) !!}
+
                     <div class="col-sm-10">
-                        <select name="status" class="form-control" id="status" >
-                            <option value="juomakelpoista">Juomakelpoista</option>
-                            <option value="ei tietoa">Ei tietoa</option>
-
-                            <option value="ei juomakelpoista">Ei juomakelpoista</option>
-
-                        </select>
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label for="tested_at" class="col-sm-2 control-label">Tested</label>
-                    <div class="col-sm-10">
-                        <input type="date" name="tested_at" class="form-control" id="tested_at" >
+                        {!! Form::date('tested_at', null, ['class' => 'form-control', 'id' => 'tested_at']) !!}
                     </div>
                 </div>
 
 
 
                 <div class="form-group">
-                    <label for="description" class="col-sm-2 control-label">Description</label>
-                    <div class="col-sm-10">
-                                <textarea name="description" rows="20" class="form-control" id="description">
 
-                                </textarea>
+                    {!! Form::label('description', 'Description:', ['class' => 'col-sm-2 control-label']) !!}
+
+                    <div class="col-sm-10">
+
+
+                        {!! Form::textarea('description', null, ['class' => 'form-control', 'id' => 'description'] ) !!}
+
                     </div>
                 </div>
 

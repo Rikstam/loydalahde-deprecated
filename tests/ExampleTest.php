@@ -46,21 +46,6 @@ class ExampleTest extends TestCase
              ->see($spring->title);
     }
 
-    public function test_it_creates_a_spring()
-    {
-        $this->visit('admin/springs/create')
-             ->type('Joku nimi', 'title')
-             ->type('kakkosnimi', 'alias')
-             ->select('juomakelpoista','status')
-             ->type('10-11-1981', 'tested_at')
-             ->type('sisältöä', 'description')
-             ->type('excerptti tähän','short_description')
-             ->type('60.226560', 'latitude')
-             ->type('25.123636', 'longitude')
-             ->check('visibility')
-             ->press('Julkaise')
-             ->see('Joku nimi')
-             ->onPage('lahteet');
-    }
+
 
 }

@@ -24,7 +24,15 @@ class Spring extends Model
      */
     protected $fillable = [
         'title',
-        'description'];
+        'alias',
+        'status',
+        'tested_at',
+        'location',
+        'description',
+        'short_description',
+        'visibility',
+        'image'
+    ];
 
     protected $postgisFields = [
         'location' => Point::class,

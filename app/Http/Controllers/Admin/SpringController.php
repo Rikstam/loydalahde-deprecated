@@ -58,7 +58,7 @@ class SpringController extends Controller
 
         $spring->save();
 
-        return redirect('lahteet');
+        return redirect('admin/springs');
 
 
     }
