@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\spring;
+use Requests\SpringRequest;
 use Phaza\LaravelPostgis\Geometries\Point;
 
 class SpringController extends Controller
