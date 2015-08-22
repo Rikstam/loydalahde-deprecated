@@ -24,7 +24,7 @@ class AdminTest extends TestCase
 
     public function test_it_creates_a_spring()
     {
-        $this->visit('admin/springs/create')
+        $this->visit('/admin/springs/create')
             ->type('Joku nimi', 'title')
             ->type('kakkosnimi', 'alias')
             ->select('juomakelpoista','status')
@@ -34,7 +34,7 @@ class AdminTest extends TestCase
             ->type('60.226560', 'latitude')
             ->type('25.123636', 'longitude')
             ->check('visibility')
-            ->press('Julkaise')
+            ->press('Lisää lähde')
             ->see('Joku nimi')
             ->onPage('admin/springs');
     }

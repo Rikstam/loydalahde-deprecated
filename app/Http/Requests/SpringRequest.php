@@ -28,12 +28,12 @@ class SpringRequest extends Request
             'title' => 'string|required',
             'alias' => 'string',
             'description' => 'string|required',
-            'short_description' => 'string|size:200|required',
+            'short_description' => 'string|required',
             'status' => 'required|in:juomakelpoista,ei tietoa,ei juomakelpoista',
             'tested_at' => 'date',
-            'latitude' => 'digits:8',
-            'longitude' => 'digits:8',
-            'visibility' => 'required|boolean',
+            'latitude' => 'digits:9',
+            'longitude' => 'digits:9',
+            'visibility' => 'required|in:true,false',
             'image' => 'image',
 
         ];
