@@ -33,7 +33,7 @@ class AdminTest extends TestCase
             ->type('excerptti tähän','short_description')
             ->type('60.226560', 'latitude')
             ->type('25.123636', 'longitude')
-            ->check('visibility')
+            ->select('true','visibility')
             ->press('Lisää lähde')
             ->see('Joku nimi')
             ->onPage('admin/springs');
