@@ -92,13 +92,14 @@
     <label for="visibility" class="col-sm-2 control-label">
         Näkyvissä?
     </label>
-    <div class="col-sm-2">
+    <div class="col-sm-3">
         {!! Form::label('visibility', 'Kyllä:', ['class' => 'control-label']) !!}
 
         {!! Form::radio('visibility', 'true') !!}
+
         {!! Form::label('visibility', 'Ei:', ['class' => 'control-label']) !!}
 
-        {!! Form::radio('visibility', 'false') !!}
+        {!! Form::radio('visibility', 'false', ['checked' => 'checked']) !!}
     </div>
 
 

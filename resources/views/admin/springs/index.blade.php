@@ -2,10 +2,10 @@
 
 @section('content')
 <div class="row">
-    <aside class="col-md-3">
+    <aside class="col-md-2">
         <h2>Admin sidebar #1</h2>
     </aside>
-    <div class="col-md-6">
+    <div class="col-md-8">
         <h1>Kaikki lähteet</h1>
 
         <h2>Järjestelmässä yhteensä: {{count($springs)}} lähdettä.  </h2>
@@ -57,7 +57,7 @@
 
     </div>
 
-    <aside class="col-md-3">
+    <aside class="col-md-2">
         <h2>Admin sidebar #2</h2>
 
     </aside>
