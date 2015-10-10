@@ -1,5 +1,4 @@
-.idea/
-/vendor
+/.idea/workspace.xml
 /node_modules
 Homestead.yaml
 .env
