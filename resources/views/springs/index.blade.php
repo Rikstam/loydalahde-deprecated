@@ -15,8 +15,11 @@
 
 
                 <section class="">
-
-                <img src="{{ url('/')}}/img/{{ $spring->image }}" alt="" class="img-responsive">
+                    @if ($spring->image)
+                        <img src="{{ url('/')}}/img/{{ $spring->image }}" alt="" class="img-responsive">
+                    @else
+                        <img src="http://placehold.it/450x250" alt="" class="img-responsive">
+                    @endif
                     <p>{{ $spring->location }}</p>
                     <a href="/lahteet/{{ $spring->id }}"><p>{{ $spring->short_description }}</p></a>
                 </section>

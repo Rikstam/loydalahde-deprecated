@@ -15,7 +15,11 @@
                     </div>
 
                     <div class="col-md-3">
-                        <img src="{{ url('/')}}/img/{{ $spring->image }}" alt="" class="img-responsive">
+                        @if ($spring->image)
+                            <img src="{{ url('/')}}/img/{{ $spring->image }}" alt="" class="img-responsive">
+                        @else
+                            <img src="http://placehold.it/450x250" alt="" class="img-responsive">
+                        @endif
                     </div>
 
                 </div>
