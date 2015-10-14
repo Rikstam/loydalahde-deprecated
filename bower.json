@@ -1,0 +1,24 @@
+{
+  "name": "loydalahde",
+  "version": "0.0.1",
+  "homepage": "https://github.com/Rikstam/loydalahde",
+  "authors": [
+    "Riku Kestilä <rikukestila@gmail.com>"
+  ],
+  "description": "An app to track springs",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "app/bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-leaflet-directive": "~0.9.0"
+  }
+}
