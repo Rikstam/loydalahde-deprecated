@@ -124,8 +124,8 @@
         <div class="row">
             <section id="map" class="col-md-12">
                 <h2>Kaikki lähteet kartalla</h2>
-                <div id="mapcontainer">
-
+                <div ng-controller="MarkerController">
+                    <leaflet id="main-map" markers="markers" center="finlandCenter" width="100%" height="480px"></leaflet>
                 </div>
 
             </section>

@@ -1,4 +1,6 @@
 /.idea/workspace.xml
 /node_modules
+/app/bower_components
 Homestead.yaml
 .env
+public/build
