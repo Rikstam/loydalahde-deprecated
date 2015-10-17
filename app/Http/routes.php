@@ -37,6 +37,9 @@ Route::get('oldsprings', function(){
     dd($bod);
 });
 
+Route::group(['prefix'=>'api', 'namespace' =>'Api'], function(){
+    Route::resource('springs', 'SpringController',['only' => ['index', 'show']]);
+});
 
 //admin routing
 Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function(){
