@@ -19,7 +19,7 @@ class SpringController extends Controller
     {
         $springs = Spring::where('visibility', true)
             ->whereNotNull('location')
-            ->select('title','location', 'tested_at')
+            ->select('title','location', 'tested_at', 'status')
             ->get();
 
         return $springs;
