@@ -9,19 +9,44 @@ app.config(function ($interpolateProvider) {
 
 app.controller("MarkerController", [ '$scope','$http', function($scope, $http) {
 
-    var $springList = {};
+    $scope.springList = {};
+    var markerIcon = 'fa-check-circle-o';
+    var markerColor = 'green';
 
-    $http.get('http://loydalahde.app:8000/api/springs').then(function(resp) {
+    $http.get('/api/springs').then(function(resp) {
         console.log('Success', resp);
         // For JSON responses, resp.data contains the result
 
         resp.data.forEach(function(item, index){
-            $springList[index] = {
+
+            switch (item.status) {
+                case 'juomakelpoista':
+                    markerIcon = 'fa-check-circle';
+                    markerColor = 'green';
+                    break;
+                case 'ei tietoa':
+                    markerIcon = 'fa-question-circle';
+                    markerColor = 'orange';
+                    break;
+                case 'ei juomakelpoista':
+                    markerIcon = 'fa-exclamation';
+                    markerColor = 'red';
+                    break;
+            }
+
+            $scope.springList[index] = {
                 lat: item.location.coordinates[1],
                 lng: item.location.coordinates[0],
-                message: '<h4>' + item.title + '</h4><p>Lähteen laatu analysoitu ' +  item.tested_at + '</p>',
+                message: '<h4>' + item.title + '</h4><p>Lähteen tila: ' + item.status + '</p><p>Lähteen laatu analysoitu: ' +  item.tested_at + '</p>',
                 focus: false,
-                draggable: false
+                draggable: false,
+                icon: {
+                    type: 'awesomeMarker',
+                    prefix: 'fa',
+                    icon: markerIcon,
+                    markerColor: markerColor
+                }
+
             }
         });
 
@@ -37,9 +62,14 @@ app.controller("MarkerController", [ '$scope','$http', function($scope, $http) {
             lng: 27.59,
             zoom: 5
         },
-        markers: $springList,
+        markers: $scope.springList,
         defaults: {
             scrollWheelZoom: false
+        },
+        legend: {
+            position: 'bottomleft',
+            colors: [ '#D53E2A', '#F49630', '#72AF26'],
+            labels: [ 'Ei juomakelpoista', 'Ei testattua tietoa', 'Juomakelpoista' ]
         }
     });
 }]);
