@@ -15,7 +15,7 @@ elixir(function(mix) {
     mix.copy('node_modules/bootstrap-sass/assets/fonts/', 'public/fonts');
     mix.sass(['app.scss']);
     //mix.babel('scripts.js');
-    mix.scripts(['../../../app/bower_components/angular-simple-logger/dist/angular-simple-logger.js','../../../app/bower_components/angular-leaflet-directive/dist/angular-leaflet-directive.js','app.js'], 'public/js/scripts.js');
+    mix.scripts(['../../../app/bower_components/Leaflet.awesome-markers/dist/leaflet.awesome-markers.js','../../../app/bower_components/angular-simple-logger/dist/angular-simple-logger.js','../../../app/bower_components/angular-leaflet-directive/dist/angular-leaflet-directive.js','app.js'], 'public/js/scripts.js');
     //mix.phpUnit();
     mix.version(['/css/app.css']);
 });

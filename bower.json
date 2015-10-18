@@ -19,6 +19,7 @@
     "tests"
   ],
   "dependencies": {
-    "angular-leaflet-directive": "~0.9.0"
+    "angular-leaflet-directive": "~0.9.0",
+    "leaflet-awesome-markers": "~2.0.2"
   }
 }

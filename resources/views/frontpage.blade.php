@@ -122,12 +122,11 @@
 
 
         <div class="row">
-            <section id="map" class="col-md-12">
+            <section id="map" class="col-md-8 col-md-offset-2">
                 <h2>Kaikki lähteet kartalla</h2>
                 <div ng-controller="MarkerController">
-                    <leaflet id="main-map" markers="markers" center="finlandCenter" width="100%" height="480px"></leaflet>
+                    <leaflet id="main-map" markers="markers" legend="legend" center="finlandCenter" width="100%" height="580px"></leaflet>
                 </div>
-
             </section>
         </div>
 

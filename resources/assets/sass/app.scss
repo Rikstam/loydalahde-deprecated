@@ -1,17 +1,18 @@
  @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+ @import "lib/awesome-marker";
  @import "components/header";
+ @import "components/map";
 
- body{
+ body {
    font-family: 'Cabin', sans-serif;
  }
- h1,h2,h3,h4,h5,h6{
+ h1,h2,h3,h4,h5,h6 {
    font-family: 'Raleway', sans-serif;
    font-weight: 700;
  }
 
  @import "components/top-banner";
 
-#mapcontainer{
-  height: 500px;
-  margin-bottom: 100px;
+#map {
+  margin-bottom: 40px;
 }
