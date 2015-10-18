@@ -6156,8 +6156,7 @@ button.prepended {
 #mission-statement {
   text-align: center; }
 
-#mapcontainer {
-  height: 500px;
-  margin-bottom: 100px; }
+#map {
+  margin-bottom: 40px; }
 
 /*# sourceMappingURL=app.css.map */
