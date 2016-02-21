@@ -6,7 +6,7 @@ use Illuminate\Foundation\Testing\DatabaseTransactions;
 
 use App\Spring;
 
-class ExampleTest extends TestCase
+class SpringTest extends TestCase
 {
 
     use DatabaseTransactions;
@@ -19,16 +19,7 @@ class ExampleTest extends TestCase
     public function testFrontpage()
     {
         $this->visit('/')
-             ->see('Löydä lähde');
-    }
-
-    public function testSearch()
-    {
-        $this->visit('/')
-             ->type('spring name', '#search')
-             ->press('HAE')
-             ->see('Hakutulokset termille "spring name"')
-             ->onPage('/hakutulokset');
+            ->see('Löydä lähde');
     }
 
     public function test_it_displays_all_springs()
@@ -43,9 +34,8 @@ class ExampleTest extends TestCase
     {
         $spring = factory(Spring::class)->create();
         $this->visit('lahteet/' . $spring->id)
-             ->see($spring->title);
+            ->see($spring->title);
     }
-
 
 
 }
