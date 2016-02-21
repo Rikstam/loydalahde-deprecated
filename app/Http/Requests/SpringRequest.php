@@ -31,11 +31,10 @@ class SpringRequest extends Request
             'short_description' => 'string|required',
             'status' => 'required|in:juomakelpoista,ei tietoa,ei juomakelpoista',
             'tested_at' => 'date',
-            'latitude' => 'digits:9',
-            'longitude' => 'digits:9',
+            'latitude' => 'digits_between:5,9',
+            'longitude' => 'digits_between:5,9',
             'visibility' => 'required|in:true,false',
             'image' => 'image',
-
         ];
     }
 }
