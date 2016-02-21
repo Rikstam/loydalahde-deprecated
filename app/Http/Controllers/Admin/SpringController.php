@@ -19,7 +19,7 @@ class SpringController extends Controller
      */
     public function index()
     {
-        $springs = Spring::orderBy('updated_at','desc')->get();
+        $springs = Spring::orderBy('title','asc')->get();
 
         return view('admin.springs.index', compact('springs'));
     }
