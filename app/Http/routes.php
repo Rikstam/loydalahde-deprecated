@@ -11,37 +11,46 @@
 |
 */
 
-Route::get('/', function () {
-    return view('frontpage');
+Route::group(['middleware' => 'web'], function () {
+
+    Route::get('/', function () {
+        return view('frontpage');
+    });
+
+    Route::post('hakutulokset',
+        //return sprintf('Hakutulokset termille "%s"', Request::input('search'));
+        'Api\SearchController@searchByTerm'
+    );
+
+    Route::resource('lahteet', 'SpringController', ['only' => ['index', 'show']]);
+
+    Route::get('oldsprings', function () {
+        $client = new \GuzzleHttp\Client(['base_uri' => 'http://loydalahde.com/wp-json/']);
+        $response = $client->get('posts?filter[posts_per_page]=-1');
+        $bod = json_decode($response->getBody());
+        //dd($bod);
+        foreach ($bod as $spr) {
+            echo $spr->title;
+        }
+
+        //dd($bod);
+    });
+
 });
 
-Route::post('hakutulokset', function(){
-    return sprintf('Hakutulokset termille "%s"', Request::input('search'));
+Route::group(['prefix' => 'api', 'namespace' => 'Api'], function () {
+    Route::resource('springs', 'SpringController', ['only' => ['index', 'show']]);
+    Route::get('cities/{name}', 'SearchController@preFetchSearchTerms');
 });
-
-Route::resource('lahteet', 'SpringController', ['only' => ['index', 'show']]);
-
-Route::get('oldsprings', function(){
-
-    $client = new \GuzzleHttp\Client(['base_uri' => 'http://loydalahde.com/wp-json/']);
-
-    $response = $client->get('posts?filter[posts_per_page]=-1');
-
-    $bod = json_decode($response->getBody());
-    //dd($bod);
-
-    foreach($bod as $spr){
-        echo $spr->title;
-    }
-
-    dd($bod);
-});
-
-Route::group(['prefix'=>'api', 'namespace' =>'Api'], function(){
-    Route::resource('springs', 'SpringController',['only' => ['index', 'show']]);
-});
+//Route::auth();
+//Route::get('/home', 'HomeController@index');
 
 //admin routing
-Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function(){
+Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => 'web'], function () {
     Route::resource('springs', 'SpringController');
+});
+
+Route::group(['middleware' => 'web'], function () {
+    Route::auth();
+    Route::get('/home', 'HomeController@index');
 });
