@@ -1,3 +1,14 @@
+#map {
+  margin-bottom: 40px;
+
+  header {
+    h2, p {
+      color: #ffffff;
+    }
+  }
+
+}
+
 .legend {
   font: 14px/16px Arial, Helvetica, sans-serif;
   background: rgba(255,255,255, 0.9);
@@ -14,4 +25,10 @@
   float: left;
   margin-right: 8px;
   opacity: 0.7;
+}
+
+.leaflet-popup-content {
+  p {
+    margin: 0;
+  }
 }

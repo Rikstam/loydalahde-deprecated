@@ -1,23 +1,23 @@
-var app = angular.module('loydaLahde',['nemLogging','leaflet-directive']);
+var app = angular.module('loydaLahde', ['nemLogging', 'leaflet-directive', 'angucomplete-alt']);
 
 app.config(function ($interpolateProvider) {
 
-   // $interpolateProvider.startSymbol('<%');
-   // $interpolateProvider.endSymbol('%>');
+    // $interpolateProvider.startSymbol('<%');
+    // $interpolateProvider.endSymbol('%>');
 
 });
 
-app.controller("MarkerController", [ '$scope','$http', function($scope, $http) {
+app.controller("FrontPageMapController", ['$scope', '$http', function ($scope, $http) {
 
     $scope.springList = {};
     var markerIcon = 'fa-check-circle-o';
     var markerColor = 'green';
 
-    $http.get('/api/springs').then(function(resp) {
+    $http.get('/api/springs').then(function (resp) {
         console.log('Success', resp);
         // For JSON responses, resp.data contains the result
 
-        resp.data.forEach(function(item, index){
+        resp.data.forEach(function (item, index) {
 
             switch (item.status) {
                 case 'juomakelpoista':
@@ -37,7 +37,7 @@ app.controller("MarkerController", [ '$scope','$http', function($scope, $http) {
             $scope.springList[index] = {
                 lat: item.location.coordinates[1],
                 lng: item.location.coordinates[0],
-                message: '<h4>' + item.title + '</h4><p>Lähteen tila: ' + item.status + '</p><p>Lähteen laatu analysoitu: ' +  item.tested_at + '</p>',
+                message: '<h4>' + item.title + '</h4><p>Lähteen tila: <strong>' + item.status + '</strong></p><p>Lähteen laatu analysoitu: <strong>' + item.tested_at + '</strong></p>',
                 focus: false,
                 draggable: false,
                 icon: {
@@ -51,7 +51,7 @@ app.controller("MarkerController", [ '$scope','$http', function($scope, $http) {
         });
 
 
-    }, function(err) {
+    }, function (err) {
         console.error('ERR', err);
         // err.status will contain the status code
     });
@@ -68,8 +68,8 @@ app.controller("MarkerController", [ '$scope','$http', function($scope, $http) {
         },
         legend: {
             position: 'bottomleft',
-            colors: [ '#D53E2A', '#F49630', '#72AF26'],
-            labels: [ 'Ei juomakelpoista', 'Ei testattua tietoa', 'Juomakelpoista' ]
+            colors: ['#D53E2A', '#F49630', '#72AF26'],
+            labels: ['Ei juomakelpoista', 'Ei testattua tietoa', 'Juomakelpoista']
         }
     });
 }]);

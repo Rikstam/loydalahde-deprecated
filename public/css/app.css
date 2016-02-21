@@ -6117,19 +6117,94 @@ Version: 1.0
   margin-right: 8px;
   opacity: 0.7; }
 
-body {
-  font-family: 'Cabin', sans-serif; }
+.leaflet-popup-content p {
+  margin: 0; }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: 'Raleway', sans-serif;
-  font-weight: 700; }
+#top-banner {
+  background-image: url(../../img/water-2.jpg);
+  background-size: cover;
+  padding: 6em 0; }
 
-.prependedInput {
+#call-to-action {
+  margin-bottom: 30px; }
+  #call-to-action .slogan {
+    width: 420px;
+    margin: 0px auto; }
+    #call-to-action .slogan h1 {
+      color: #ffffff;
+      text-align: center; }
+
+#mission-statement {
+  text-align: center; }
+
+.angucomplete-holder {
+  position: relative; }
+
+.angucomplete-dropdown {
+  border-color: #ececec;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 2px;
+  width: 100%;
+  padding: 6px;
+  cursor: pointer;
+  z-index: 9999;
+  position: absolute;
+  /*top: 32px;
+  left: 0px;
+  */
+  margin-top: -6px;
+  background-color: #ffffff; }
+
+.angucomplete-searching {
+  color: #acacac;
+  font-size: 14px; }
+
+.angucomplete-description {
+  font-size: 14px; }
+
+.angucomplete-row {
+  padding: 5px;
+  color: #000000;
+  margin-bottom: 4px;
+  clear: both; }
+
+.angucomplete-selected-row {
+  background-color: lightblue;
+  color: #ffffff; }
+
+.angucomplete-image-holder {
+  padding-top: 2px;
+  float: left;
+  margin-right: 10px;
+  margin-left: 5px; }
+
+.angucomplete-image {
+  height: 34px;
+  width: 34px;
+  border-radius: 50%;
+  border-color: #ececec;
+  border-style: solid;
+  border-width: 1px; }
+
+.angucomplete-image-default {
+  /* Add your own default image here
+   background-image: url('/assets/default.png');
+  */
+  background-position: center;
+  background-size: contain;
+  height: 34px;
+  width: 34px; }
+
+#searchBox h2, #searchBox h3 {
+  text-align: center; }
+
+.main-search {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex; }
 
-.searchField {
+#search {
   -webkit-flex: 1;
   -ms-flex: 1;
   flex: 1; }

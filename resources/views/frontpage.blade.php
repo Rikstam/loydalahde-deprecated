@@ -3,76 +3,101 @@
 @section('content')
 
     <div id="top-banner">
-
         <div class="container">
-
             <div id="call-to-action">
-
+                <a name="haku"></a>
                 <div class="slogan">
                     <h1>Koska kaikilla on oikeus puhtaaseen veteen</h1>
                 </div>
-
             </div>
-
-            <div class="row">
-
-                <section id="searchBox" class="col-md-6 col-md-offset-3">
-                    <h2>Haku</h2>
-                    <form method="POST" action="/hakutulokset">
-                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
-
-                        <div class="prependedInput form-group">
-                            <input type="text" class="searchField" id="search" name="search">
-                            <button class="btn btn-primary prepended" type="submit">HAE</button>
-                        </div>
-
-                    </form>
-                </section>
-
-            </div>
-
+            @include('partials.searchForm')
         </div>
     </div>
 
     <div class="container">
-
-
         <div class="row">
-
-
-            <div class="col-md-8 col-md-offset-2">
+            <section id="news" class="col-md-8 col-md-offset-2">
                 <h1 id="mission-statement">Löydä lähde lähialueeltasi ja auta pitämään lähdevesi yhteisessä
                     omistuksessa.</h1>
-
                 <hr>
                 <h2>Ajankohtaista</h2>
-                <article>
-                    <h3>Otsikko</h3>
-                    <small>10.11.1981</small>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex exercitationem inventore officiis
-                        perferendis. Adipisci aspernatur at doloremque dolores esse ipsa libero nemo voluptas! Facilis
-                        magni nihil tenetur. Est, mollitia, voluptate?</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex exercitationem inventore officiis
-                        perferendis. Adipisci aspernatur at doloremque dolores esse ipsa libero nemo voluptas! Facilis
-                        magni nihil tenetur. Est, mollitia, voluptate?</p>
-                    <hr>
+                <article class="row article">
+                    <div class="article-image col-xs-12 col-sm-4">
+                        <img class="img-responsive" src="https://fillmurray.com/300/300">
+                    </div>
+                    <div class="article-excerpt col-xs-12 col-sm-8">
+                        <header>
+                        <h3>Otsikko</h3>
+                        <span class="published-date">10.11.1981</span> | <span class="article-writer">Riku Kestilä</span> | <span class="article-category">Ajankohtaista</span>
+                        </header>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex exercitationem inventore
+                            officiis
+                            perferendis. Adipisci aspernatur at doloremque dolores esse ipsa libero nemo voluptas!
+                            Facilis
+                            magni nihil tenetur. Est, mollitia, voluptate?</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex exercitationem inventore
+                            officiis
+                            perferendis. Adipisci aspernatur at doloremque dolores esse ipsa libero nemo voluptas!
+                            Facilis
+                            magni nihil tenetur. Est, mollitia, voluptate?</p>
+                        <a href="#" class="read-more">Lue lisää <i class="fa fa-arrow-circle-right"></i></a>
 
+                    </div>
                 </article>
 
+                <hr>
 
+
+                <article class="row article">
+                    <div class="article-image col-xs-12 col-sm-4">
+                        <img class="img-responsive" src="https://fillmurray.com/300/300">
+                    </div>
+                    <div class="article-excerpt col-xs-12 col-sm-8">
+                        <header>
+                            <h3>Otsikko</h3>
+                            <span class="published-date">10.11.1981</span> | <span class="article-writer">Riku Kestilä</span> | <span class="article-category">Ajankohtaista</span>
+                        </header>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex exercitationem inventore
+                            officiis
+                            perferendis. Adipisci aspernatur at doloremque dolores esse ipsa libero nemo voluptas!
+                            Facilis
+                            magni nihil tenetur. Est, mollitia, voluptate?</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex exercitationem inventore
+                            officiis
+                            perferendis. Adipisci aspernatur at doloremque dolores esse ipsa libero nemo voluptas!
+                            Facilis
+                            magni nihil tenetur. Est, mollitia, voluptate?</p>
+                        <a href="#" class="read-more">Lue lisää <i class="fa fa-arrow-circle-right"></i></a>
+
+                    </div>
+                </article>
+
+                <div class="row">
+                    <div class="col-xs-12">
+                        <a href="#">Kaikki uutiset</a>
+                    </div>
+                </div>
+
+            </section>
+        </div>
+    </div>
+    <div class="wrapper">
+        <div class="container">
+            <div class="row">
+                <section id="map" class="col-md-8 col-md-offset-2">
+                    <header>
+                        <h2>Lähdetilanne 20.2.2015</h2>
+                        <p>Lähdetilanteesta näkyy tällä hetkellä tiedossamme olevat lähteet ja niiden tilanne
+                            värikoodattuna</p>
+                    </header>
+
+                    <div ng-controller="FrontPageMapController">
+                        <leaflet id="main-map" markers="markers" legend="legend" center="finlandCenter" width="100%"
+                                 height="580px"></leaflet>
+                    </div>
+                </section>
             </div>
 
         </div>
-
-        <div class="row">
-            <section id="map" class="col-md-8 col-md-offset-2">
-                <h2>Kaikki lähteet kartalla</h2>
-                <div ng-controller="FrontPageMapController">
-                    <leaflet id="main-map" markers="markers" legend="legend" center="finlandCenter" width="100%"
-                             height="580px"></leaflet>
-                </div>
-            </section>
-        </div>
-
     </div>
 @endsection
