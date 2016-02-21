@@ -54,10 +54,9 @@ class SpringController extends Controller
      */
     public function show($id)
     {
-        $spring = Spring::findOrFail($id);
+        $spring = Spring::where('id', $id)->first();
 
-        //return $spring;
-        return view('springs.show', compact('spring'));
+        return $spring;
     }
 
     /**
