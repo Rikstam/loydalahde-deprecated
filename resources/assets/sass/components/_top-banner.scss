@@ -1,21 +1,12 @@
-.prependedInput{
-  display:flex;
-}
-.searchField{
-  flex:1;
-}
-
-button.prepended{
-  border-radius: 0;
-}
-
 #top-banner{
   background-image: url(../../img/water-2.jpg);
   background-size: cover;
-  padding: 15em 0;
+  padding: 6em 0;
 }
 
 #call-to-action{
+
+  margin-bottom: 30px;
 
   .slogan{
     //position: absolute;
@@ -30,12 +21,7 @@ button.prepended{
   }
 }
 
-#searchBox{
-  h2{
-    text-align: center;
-    color: #ffffff;
-  }
-}
+
 #mission-statement{
   text-align: center;
 }

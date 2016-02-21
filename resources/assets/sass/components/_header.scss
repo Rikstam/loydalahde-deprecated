@@ -3,14 +3,30 @@
   margin-bottom: 0;
 }
 
+.navbar-default {
+ background-color: $navbar-bg;
+  border: none;
+  border-radius: 0;
+  .navbar-nav > li > a {
+    color: $navbar-font;
+    &:hover {
+      color: $navbar-font;
+      text-decoration: underline;
+    }
+  }
+}
+
 .navbar-brand{
   padding-top: 3px;
   h1{
     margin: 0;
     font-size: 20px;
+    color: $navbar-font;
   }
   img{
     float:left;
     margin-right: 5px;
   }
 }
+
+

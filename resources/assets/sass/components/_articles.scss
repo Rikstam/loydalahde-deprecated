@@ -1,0 +1,14 @@
+.article {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.article-excerpt {
+  header {
+    border-bottom: 1px solid $border-color;
+    margin-bottom: 10px;
+    span {
+      color: darken($border-color, 30%);
+    }
+  }
+}

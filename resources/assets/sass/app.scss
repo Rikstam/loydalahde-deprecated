@@ -1,18 +1,17 @@
- @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
- @import "lib/awesome-marker";
- @import "components/header";
- @import "components/map";
+@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+@import "lib/awesome-marker";
+@import "variables";
+@import "global";
+@import "components/header";
+@import "components/map";
+@import "components/top-banner";
+@import "components/search";
+@import "components/frontpage";
+@import "components/springs";
+@import "components/articles";
+@import "components/footer";
 
- body {
-   font-family: 'Cabin', sans-serif;
- }
- h1,h2,h3,h4,h5,h6 {
-   font-family: 'Raleway', sans-serif;
-   font-weight: 700;
- }
 
- @import "components/top-banner";
 
-#map {
-  margin-bottom: 40px;
-}
+
+
