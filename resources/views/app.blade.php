@@ -43,8 +43,10 @@
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav">
-                        <li class="active"><a href="/">Etusivu <span class="sr-only">(current)</span></a></li>
+                        <li class=""><a href="/">Etusivu <span class="sr-only">(current)</span></a></li>
                         <li><a href="/lahteet">Lähteet</a></li>
+                        <li><a href="#haku">Haku</a></li>
+
                     </ul>
                 </div><!-- /.navbar-collapse -->
             </div><!-- /.container-fluid -->
