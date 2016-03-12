@@ -22,13 +22,13 @@ class SpringTest extends TestCase
             ->see('Löydä lähde');
     }
 
-    public function test_it_displays_all_springs()
-    {
-        $spring = factory(Spring::class)->create();
-        $this->visit('lahteet')
-            ->see($spring->title);
+   // public function test_it_displays_all_springs()
+    //{
+      //  $spring = factory(Spring::class)->create();
+        //$this->visit('lahteet')
+          //  ->see($spring->title);
 
-    }
+    //}
 
     public function test_it_displays_a_single_spring()
     {
