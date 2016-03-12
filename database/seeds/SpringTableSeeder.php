@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Seeder;
 use App\Spring;
+
 //use Faker;
 
 
@@ -23,7 +24,8 @@ class SpringTableSeeder extends Seeder
 
         $bod = json_decode($response->getBody());
 
-        foreach($bod as $spr){
+        foreach ($bod as $spr) {
+
             $spring = new Spring();
             $spring->title = $spr->title;
             //$spring->alias = 'Veljespirtin lähde';

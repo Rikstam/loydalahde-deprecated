@@ -20,6 +20,8 @@ elixir(function(mix) {
     mix.version(['/css/app.css']);
 });
 
+
+
 /*
 var paths = {
  'jquery': './vendor/bower_components/jquery/',

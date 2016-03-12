@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
-
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\spring;
@@ -32,7 +31,6 @@ class SpringController extends Controller
     public function create()
     {
         return view('admin.springs.create');
-
     }
 
     /**
