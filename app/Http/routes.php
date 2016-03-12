@@ -46,11 +46,25 @@ Route::group(['prefix' => 'api', 'namespace' => 'Api'], function () {
 //Route::get('/home', 'HomeController@index');
 
 //admin routing
-Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => 'web'], function () {
+Route::group([
+    'prefix' => 'admin',
+    'namespace' => 'Admin',
+    'middleware' => ['web', 'auth']
+    ], function () {
+    Route::get('/', 'HomeController@index');
     Route::resource('springs', 'SpringController');
 });
 
 Route::group(['middleware' => 'web'], function () {
     Route::auth();
-    Route::get('/home', 'HomeController@index');
+    //Route::get('/home', 'HomeController@index');
 });
+
+Route::group(['prefix' => 'protected-api', 'middleware' => 'auth:api'], function () {
+    Route::get('users/{user}', function(App\User $user){
+        return $user;
+    });
+
+    // return Auth::guard('api')->user();
+});
+

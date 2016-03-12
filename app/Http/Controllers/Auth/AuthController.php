@@ -29,7 +29,7 @@ class AuthController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('guest', ['except' => 'getLogout']);
+        $this->middleware('guest', ['except' => 'logout']);
     }
 
     protected $redirectTo = '/';
@@ -62,5 +62,13 @@ class AuthController extends Controller
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
         ]);
+    }
+
+    public function register() {
+        return redirect('/');
+    }
+
+    public function showRegistrationForm() {
+        return redirect('/');
     }
 }
