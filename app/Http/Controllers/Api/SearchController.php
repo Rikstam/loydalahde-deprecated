@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use DB;
 use App\Http\Controllers\Controller;
+use App\Spring;
+use Illuminate\Pagination\Paginator;
 
 class SearchController extends Controller
 {
@@ -30,26 +32,33 @@ FROM springs AS s WHERE lower(s.title) LIKE ? AND s.visibility = TRUE GROUP BY s
     public function searchByTerm(Request $searchRequest)
     {
         $searchTerm = $searchRequest->input('searchTerm');
-        $title = strtolower($searchTerm) . '%';
 
-        $springsByCity = collect(DB::select('SELECT s.id, s.title, s.status, s.alias, s.short_description, s.image FROM cities as c
+        if (!empty($searchTerm)) {
+            $title = strtolower($searchTerm) . '%';
+
+            $springsByCity = collect(DB::select('SELECT s.id, s.title, s.status, s.alias, s.short_description, s.image FROM cities as c
         LEFT JOIN springs as s
         ON ST_DWITHIN(c.location, s.location, 10000)
         WHERE lower(c.name) LIKE ? AND s.visibility = TRUE', [strtolower($searchTerm)]));
 
-        $springsByTitle = collect(DB::select('SELECT s.id, s.title, s.status, s.alias, s.short_description, s.image
+            $springsByTitle = collect(DB::select('SELECT s.id, s.title, s.status, s.alias, s.short_description, s.image
 FROM springs AS s WHERE lower(s.title) LIKE ? AND s.visibility = TRUE', [$title]));
 
-        //return $springs;
+            //return $springs;
 
-        if ( ! $springsByCity->isEmpty() ) {
-            $springs = $springsByCity;
-        } elseif (! $springsByTitle->isEmpty()) {
-            $springs = $springsByTitle;
+            if (!$springsByCity->isEmpty()) {
+                $springs = new Paginator($springsByCity, 10);
+            } elseif (!$springsByTitle->isEmpty()) {
+                $springs = new Paginator($springsByTitle, 10);
+            } else {
+                $springs = Spring::where('visibility', true)->orderBy('title', 'asc')->simplePaginate(10);
+            }
         } else {
-            $springs = [];
+            $springs = Spring::where('visibility', true)->orderBy('title', 'asc')->simplePaginate(10);
+            $searchTerm = 'Kaikki';
         }
 
-        return view('springs.index', compact('springs','searchTerm'));
+
+        return view('springs.index', compact('springs', 'searchTerm'));
     }
 }
