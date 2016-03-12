@@ -1,14 +1,25 @@
 .springs-list {
+  padding-top: 42px;
   .spring {
-    h2 {
-      font-size: 18px;
-      height: 25px;
+    header {
+      h2 {
+        font-size: 18px;
+        height: 25px;
+        margin-top: 0;
+        text-align: left;
+      }
+      h3 {
+        font-size: 14px;
+        margin-top: 0;
+      }
     }
+
     .spring-status {
       text-align: center;
       padding: 5px;
       font-weight: bold;
       text-transform: uppercase;
+      display: block;
     }
   }
 }

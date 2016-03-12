@@ -2,10 +2,6 @@
 
 @section('content')
 
-    <div class="row">
-        <aside class="col-md-3">
-            <h2>Admin sidebar #1</h2>
-        </aside>
         <div class="col-md-6">
             <h1>Muokkaa lähdettä</h1>
             <h2>{{ $spring->title }}</h2>
@@ -24,7 +20,7 @@
 
             </table>
 
-            {!! Form::model($spring,['method' => 'PATCH','route' =>['admin.springs.update', $spring->id], 'class' => 'form-horizontal']) !!}
+            {!! Form::model($spring,['method' => 'PATCH','route' =>['admin.springs.update', $spring->id], 'files' => true, 'class' => 'form-horizontal']) !!}
 
             @include('admin.springs.partials.form',['submitButtonText' => 'Tallenna'])
 
@@ -33,12 +29,5 @@
         @include ('errors.list')
 
         </div>
-
-        <aside class="col-md-3">
-            <h2>Admin sidebar #2</h2>
-
-        </aside>
-
-    </div>
 
 @endsection

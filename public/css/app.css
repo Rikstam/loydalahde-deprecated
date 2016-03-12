@@ -6252,15 +6252,22 @@ button.prepended {
 .wrapper {
   background-color: cadetblue; }
 
-.springs-list .spring h2 {
-  font-size: 18px;
-  height: 25px; }
-
-.springs-list .spring .spring-status {
-  text-align: center;
-  padding: 5px;
-  font-weight: bold;
-  text-transform: uppercase; }
+.springs-list {
+  padding-top: 42px; }
+  .springs-list .spring header h2 {
+    font-size: 18px;
+    height: 25px;
+    margin-top: 0;
+    text-align: left; }
+  .springs-list .spring header h3 {
+    font-size: 14px;
+    margin-top: 0; }
+  .springs-list .spring .spring-status {
+    text-align: center;
+    padding: 5px;
+    font-weight: bold;
+    text-transform: uppercase;
+    display: block; }
 
 .article {
   margin-top: 20px;
@@ -6277,5 +6284,14 @@ button.prepended {
   padding: 30px 0 30px 0; }
   #main-footer p {
     color: #ffffff; }
+
+.admin-side-nav ul {
+  list-style: none; }
+  .admin-side-nav ul li {
+    padding: 10px 0 10px 0;
+    text-transform: uppercase; }
+    .admin-side-nav ul li a {
+      color: #000000;
+      font-size: 18px; }
 
 /*# sourceMappingURL=app.css.map */

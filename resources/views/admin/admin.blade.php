@@ -52,11 +52,27 @@
 
 </header>
 <main class="container-fluid">
-    @yield('content')
-</main>
+    <div class="row">
+        <aside class="col-md-2" >
+            <h2>Navigation</h2>
+            <nav class="admin-side-nav" data-spy="affix" data-offset-top="60" data-offset-bottom="200">
+                <ul>
+                    <li><a href="/admin">Home</a></li>
 
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.1/js/bootstrap.min.js"></script>
+                    <li><a href="/admin/springs">Springs</a></li>
+                    <li><a href="/admin/posts">Posts</a></li>
+                    <li><a href="/admin/pages">Pages</a></li>
+                    <li><a href="/admin/users">Users</a></li>
+                    <li><a href="/admin/messages">Messages</a></li>
+                    <li><a href="/admin/settings">Settings</a></li>
+                </ul>
+            </nav>
+        </aside>
+        @yield('content')
+    </div>
+</main>
+<script src="/js/vue.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue-strap/1.0.8/vue-strap.min.js"></script>
 <script src="{{ asset('/js/bundle.js') }}"></script>
 </body>
 </html>

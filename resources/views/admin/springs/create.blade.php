@@ -2,10 +2,6 @@
 
     @section('content')
 
-        <div class="row">
-            <aside class="col-md-3">
-                <h2>Admin sidebar #1</h2>
-            </aside>
             <div class="col-md-6">
             <h1>Lisää uusi lähde</h1>
 
@@ -14,7 +10,7 @@
 
 
                     </form>
-                {!! Form::open(['url' => 'admin/springs','class' => 'form-horizontal']) !!}
+                {!! Form::open(['url' => 'admin/springs','files' => true,'class' => 'form-horizontal']) !!}
 
                     @include('admin.springs.partials.form',['submitButtonText' => 'Lisää lähde'])
 
@@ -24,12 +20,5 @@
                 @include ('errors.list')
 
             </div>
-
-            <aside class="col-md-3">
-                <h2>Admin sidebar #2</h2>
-
-            </aside>
-
-        </div>
 
     @endsection
