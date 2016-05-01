@@ -5,9 +5,11 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use App\spring;
+use App\Spring;
 use App\Http\Requests\SpringRequest;
 use Phaza\LaravelPostgis\Geometries\Point;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\File;
 
 class SpringController extends Controller
 {
@@ -52,14 +54,19 @@ class SpringController extends Controller
         $lat = $request->get('latitude');
         $lng = $request->get('longitude');
         $spring->location = new Point( $lat, $lng );
-
         $spring->visibility = $request->get('visibility');
 
         $spring->save();
 
+        //$imageName = $spring->id . '.' .
+          //  $request->file('image')->getClientOriginalExtension();
+
+
+        //$request->file('image')->move(
+          //  base_path() . '/public/img/springs/', $imageName
+        //);
+
         return redirect('admin/springs');
-
-
     }
 
     /**
@@ -101,20 +108,34 @@ class SpringController extends Controller
 
         $spring->title = $request->get('title');
         $spring->alias = $request->get('alias');
+        $spring->slug = $request->get('slug');
         $spring->status = $request->get('status');
         $spring->tested_at = $request->get('tested_at') ? $request->get('tested_at') : null ;
         $spring->description = $request->get('description');
         $spring->short_description = $request->get('short_description');
-        $lat = $request->get('latitude');
-        $lng = $request->get('longitude');
-        $spring->location = new Point( $lat, $lng );
+
+        if ($request->get('latitude') &&  $request->get('longitude')) {
+            $lat = $request->get('latitude');
+            $lng = $request->get('longitude');
+            $spring->location = new Point( $lat, $lng );
+        }
 
         $spring->visibility = $request->get('visibility');
 
         $spring->save();
 
-        return redirect('admin/springs');
+        if ( $request->hasFile('image') ) {
+            $file = $request->file('image');
+            $extension = $file->getClientOriginalExtension();
+            Storage::disk('public')->put($spring->slug . '.' . $extension, File::get($file));
 
+            $spring->image = $spring->slug . '.' . $extension;
+
+            $spring->save();
+        }
+
+
+        return redirect('admin/springs');
     }
 
     /**
