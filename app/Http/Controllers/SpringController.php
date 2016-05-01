@@ -50,11 +50,11 @@ class SpringController extends Controller
      * @param  int  $id
      * @return Response
      */
-    public function show($id)
+    public function show($slug_or_id)
     {
-        $spring = Spring::findOrFail($id);
+       // $spring = Spring::findOrFail($id);
+        $spring = Spring::findBySlugOrIdOrFail($slug_or_id);
 
-        //return $spring;
         return view('springs.show', compact('spring'));
     }
 

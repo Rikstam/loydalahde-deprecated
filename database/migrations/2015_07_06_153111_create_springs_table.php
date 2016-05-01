@@ -25,6 +25,7 @@ class CreateSpringsTable extends Migration
             $table->point('location')->nullable();
             $table->boolean('visibility')->default(true);
             $table->string('image')->nullable();
+            $table->string('slug')->nullable();
 
         });
     }
@@ -36,6 +37,6 @@ class CreateSpringsTable extends Migration
      */
     public function down()
     {
-        Schema::drop('springs');
+       Schema::drop('springs');
     }
 }

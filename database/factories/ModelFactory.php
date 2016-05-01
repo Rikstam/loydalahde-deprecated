@@ -24,6 +24,7 @@ $factory->define(App\Spring::class, function ($faker) {
     return [
         'title' => $faker->name,
         'alias' => 'multsun lähde',
+        'slug' => 'multsun-lahde',
         'description' => $faker->text,
         'short_description' => 'Veljesten nimet vanhimmasta nuorimpaan ovat: Juhani, Tuomas, Aapo, Simeoni, Timo, Lauri ja Eero. Ovat heistä Tuomas ja Aapo kaksoispari ja samoin Timo ja Lauri.',
         'status'=>'juomakelpoista',

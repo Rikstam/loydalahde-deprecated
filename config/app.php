@@ -146,6 +146,7 @@ return [
         Barryvdh\Debugbar\ServiceProvider::class,
         Phaza\LaravelPostgis\DatabaseServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
+        Cviebrock\EloquentSluggable\SluggableServiceProvider::class,
 
     ],
 
