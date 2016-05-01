@@ -36,12 +36,12 @@ FROM springs AS s WHERE lower(s.title) LIKE ? AND s.visibility = TRUE GROUP BY s
         if (!empty($searchTerm)) {
             $title = strtolower($searchTerm) . '%';
 
-            $springsByCity = collect(DB::select('SELECT s.id, s.title, s.status, s.alias, s.short_description, s.image FROM cities as c
+            $springsByCity = collect(DB::select('SELECT s.id, s.title, s.status, s.slug, s.alias, s.short_description, s.image FROM cities as c
         LEFT JOIN springs as s
         ON ST_DWITHIN(c.location, s.location, 10000)
         WHERE lower(c.name) LIKE ? AND s.visibility = TRUE', [strtolower($searchTerm)]));
 
-            $springsByTitle = collect(DB::select('SELECT s.id, s.title, s.status, s.alias, s.short_description, s.image
+            $springsByTitle = collect(DB::select('SELECT s.id, s.title, s.status, s.slug, s.alias, s.short_description, s.image
 FROM springs AS s WHERE lower(s.title) LIKE ? AND s.visibility = TRUE', [$title]));
 
             //return $springs;
@@ -57,7 +57,6 @@ FROM springs AS s WHERE lower(s.title) LIKE ? AND s.visibility = TRUE', [$title]
             $springs = Spring::where('visibility', true)->orderBy('title', 'asc')->simplePaginate(10);
             $searchTerm = 'Kaikki';
         }
-
 
         return view('springs.index', compact('springs', 'searchTerm'));
     }
