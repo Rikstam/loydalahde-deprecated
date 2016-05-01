@@ -3,7 +3,7 @@
         <form method="POST" action="/hakutulokset">
             {{ csrf_field() }}
             <div class="form-group main-search">
-                <button class="btn btn-primary" type="submit"><i class="fa fa-search"></i>
+                <button class="btn btn-primary search-button" type="submit"><i class="fa fa-search"></i>
                     Hae
                 </button>
                 <angucomplete-alt id="search"
@@ -15,7 +15,7 @@
                                   title-field="name"
                                   description-field="hits"
                                   input-name="searchTerm"
-                                  input-class="form-control"/>
+                                  input-class="form-control main-search"/>
 
             </div>
 

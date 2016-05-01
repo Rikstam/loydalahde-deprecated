@@ -17,9 +17,10 @@
     <div class="container">
         <div class="row">
             <section id="news" class="col-md-8 col-md-offset-2">
-                <h1 id="mission-statement">Löydä lähde lähialueeltasi ja auta pitämään lähdevesi yhteisessä
+                <!--  <h1 id="mission-statement">Löydä lähde lähialueeltasi ja auta pitämään lähdevesi yhteisessä
                     omistuksessa.</h1>
                 <hr>
+
                 <h2>Ajankohtaista</h2>
                 <article class="row article">
                     <div class="article-image col-xs-12 col-sm-4">
@@ -77,7 +78,7 @@
                         <a href="#">Kaikki uutiset</a>
                     </div>
                 </div>
-
+-->
             </section>
         </div>
     </div>
@@ -87,8 +88,7 @@
                 <section id="map" class="col-md-8 col-md-offset-2">
                     <header>
                         <h2>Lähdetilanne 20.2.2015</h2>
-                        <p>Lähdetilanteesta näkyy tällä hetkellä tiedossamme olevat lähteet ja niiden tilanne
-                            värikoodattuna</p>
+                        <p>Lähdetilanteesta näkyy tällä hetkellä tiedossamme olevat lähteet.</p>
                     </header>
 
                     <div ng-controller="FrontPageMapController">

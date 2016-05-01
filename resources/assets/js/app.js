@@ -65,11 +65,19 @@ app.controller("FrontPageMapController", ['$scope', '$http', function ($scope, $
         markers: $scope.springList,
         defaults: {
             scrollWheelZoom: false
-        },
+        }/*,
         legend: {
             position: 'bottomleft',
             colors: ['#D53E2A', '#F49630', '#72AF26'],
             labels: ['Ei juomakelpoista', 'Ei testattua tietoa', 'Juomakelpoista']
+        }*/
+    });
+}]);
+
+app.controller("SingleSpringController",['$scope', '$http', function($scope, $http){
+    angular.extend($scope, {
+        defaults: {
+            scrollWheelZoom: false
         }
     });
 }]);
