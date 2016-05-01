@@ -1,3 +1,10 @@
+#main-admin-sidebar {
+  background-color: #000;
+  h2 {
+    color: #fff;
+  }
+}
+
 .admin-side-nav {
   ul {
     list-style: none;
@@ -5,7 +12,7 @@
       padding: 10px 0 10px 0;
       text-transform: uppercase;
       a {
-        color: #000000;
+        color: #fff;
         font-size: 18px;
       }
     }

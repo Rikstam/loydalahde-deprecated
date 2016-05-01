@@ -6106,7 +6106,7 @@ h2 {
   margin-bottom: 0; }
 
 .navbar-default {
-  background-color: #0421d4;
+  background-color: #4f90ff;
   border: none;
   border-radius: 0; }
   .navbar-default .navbar-nav > li > a {
@@ -6153,7 +6153,8 @@ h2 {
 #top-banner {
   background-image: url(../../img/water-2.jpg);
   background-size: cover;
-  padding: 6em 0; }
+  padding: 6em 0;
+  background-attachment: fixed; }
 
 #call-to-action {
   margin-bottom: 30px; }
@@ -6249,8 +6250,17 @@ button.prepended {
     text-decoration: none;
     color: orange; }
 
+.main-search {
+  height: 55px;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0; }
+
+.search-button {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0; }
+
 .wrapper {
-  background-color: cadetblue; }
+  background-color: #4f90ff; }
 
 .springs-list {
   padding-top: 42px; }
@@ -6269,6 +6279,10 @@ button.prepended {
     text-transform: uppercase;
     display: block; }
 
+.single-spring {
+  padding-top: 60px;
+  padding-bottom: 60px; }
+
 .article {
   margin-top: 20px;
   margin-bottom: 20px; }
@@ -6285,13 +6299,18 @@ button.prepended {
   #main-footer p {
     color: #ffffff; }
 
+#main-admin-sidebar {
+  background-color: #000; }
+  #main-admin-sidebar h2 {
+    color: #fff; }
+
 .admin-side-nav ul {
   list-style: none; }
   .admin-side-nav ul li {
     padding: 10px 0 10px 0;
     text-transform: uppercase; }
     .admin-side-nav ul li a {
-      color: #000000;
+      color: #fff;
       font-size: 18px; }
 
 /*# sourceMappingURL=app.css.map */

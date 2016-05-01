@@ -96,3 +96,14 @@ button.prepended {
     color: orange;
   }
 }
+
+.main-search {
+  height: 55px;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.search-button {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
