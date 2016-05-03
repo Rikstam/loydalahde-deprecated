@@ -7,8 +7,8 @@
     "require": {
         "php": ">=5.5.9",
         "laravel/framework": "5.2.*",
-        "phaza/laravel-postgis": "^2.13",
-        "laravelcollective/html": "^5.1",
+        "phaza/laravel-postgis": "^3.0",
+        "laravelcollective/html": "^5.2.4",
         "cviebrock/eloquent-sluggable": "^3.1"
 
     },
