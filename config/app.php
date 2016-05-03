@@ -80,7 +80,7 @@ return [
     |
     */
 
-    'key' => env('APP_KEY', 'SomeRandomString'),
+    'key' => env('APP_KEY', 'l^PA6SNay3%dYOx5btSe$#fsDmAEKPtH'),
 
     'cipher' => 'AES-256-CBC',
 
@@ -143,7 +143,7 @@ return [
         App\Providers\AppServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
-        Barryvdh\Debugbar\ServiceProvider::class,
+       // Barryvdh\Debugbar\ServiceProvider::class,
         Phaza\LaravelPostgis\DatabaseServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
         Cviebrock\EloquentSluggable\SluggableServiceProvider::class,
