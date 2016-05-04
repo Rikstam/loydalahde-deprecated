@@ -9,7 +9,7 @@
     <link href='http://fonts.googleapis.com/css?family=Cabin:400,700,400italic' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.css" />
-    <link href="{{ elixir('css/app.css') }}" rel="stylesheet" type="text/css">
+    <link href="/css/app.css" rel="stylesheet" type="text/css">
 
     <!-- Fonts
     <link href='http://fonts.googleapis.com/css?family=Titillium+Web:400,900,700' rel='stylesheet' type='text/css'>
@@ -23,9 +23,6 @@
 </head>
 <body>
 <header id="mainhead" >
-
-
-
     <nav class="navbar navbar-default navbar-fixed-top">
             <div class="container">
                 <!-- Brand and toggle get grouped for better mobile display -->
@@ -45,14 +42,10 @@
                     <ul class="nav navbar-nav">
                         <li class=""><a href="/">Etusivu <span class="sr-only">(current)</span></a></li>
                         <li><a href="/lahteet">Lähteet</a></li>
-                        <li><a href="#haku">Haku</a></li>
-
                     </ul>
                 </div><!-- /.navbar-collapse -->
             </div><!-- /.container-fluid -->
         </nav>
-
-
 </header>
 
 <main class="">
@@ -75,6 +68,6 @@
 
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.1/js/bootstrap.min.js"></script>
-<script src="{{ asset('/js/scripts.js') }}"></script>
+<script src="/js/scripts.js"></script>
 </body>
 </html>
