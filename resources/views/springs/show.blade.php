@@ -23,11 +23,11 @@
                 <hr>
                 {!! $spring->description !!}
 
-                @if ($spring->location)
+                @if ($spring->latitude && $spring->longitude)
                     <div ng-controller="SingleSpringController">
                         <leaflet class="single-map"
-                                 markers="{m1: {lat: {{$spring->location->getLat()}},lng: {{$spring->location->getLng()}}  } }"
-                                 center="{lat: 60.981477,lng: 25.725253, zoom: 10}"
+                                 markers="{m1: {lat: {{$spring->latitude}},lng: {{$spring->longitude}}  } }"
+                                 center="{lat: {{$spring->latitude}}, lng: {{$spring->longitude}}, zoom: 10}"
                                  width="100%"
                                  height="580px">
 

@@ -53,7 +53,8 @@ class SpringController extends Controller
         $spring->short_description = $request->get('short_description');
         $lat = $request->get('latitude');
         $lng = $request->get('longitude');
-        $spring->location = new Point( $lat, $lng );
+        $spring->latitude = $lat;
+        $spring->longitude = $lng;
         $spring->visibility = $request->get('visibility');
 
         $spring->save();
@@ -117,7 +118,8 @@ class SpringController extends Controller
         if ($request->get('latitude') &&  $request->get('longitude')) {
             $lat = $request->get('latitude');
             $lng = $request->get('longitude');
-            $spring->location = new Point( $lat, $lng );
+            $spring->latitude = $lat;
+            $spring->longitude = $lng;
         }
 
         $spring->visibility = $request->get('visibility');

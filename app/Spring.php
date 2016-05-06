@@ -3,14 +3,12 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-use Phaza\LaravelPostgis\Eloquent\PostgisTrait;
-use Phaza\LaravelPostgis\Geometries\Point;
 use Cviebrock\EloquentSluggable\SluggableInterface;
 use Cviebrock\EloquentSluggable\SluggableTrait;
 
 class Spring extends Model implements SluggableInterface
 {
-    use PostgisTrait;
+
     use SluggableTrait;
     /**
      * The database table used by the model.
@@ -35,14 +33,12 @@ class Spring extends Model implements SluggableInterface
         'alias',
         'status',
         'tested_at',
-        'location',
+        'latitude',
+        'longitude',
         'description',
         'short_description',
         'visibility',
         'image'
     ];
-
-    protected $postgisFields = [
-        'location' => Point::class,
-    ];
+    
 }

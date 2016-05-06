@@ -30,7 +30,8 @@ $factory->define(App\Spring::class, function ($faker) {
         'status'=>'juomakelpoista',
         'tested_at' => '10-11-1981',
         'visibility' => true,
-        'location' => new \Phaza\LaravelPostgis\Geometries\Point($faker->latitude, $faker->longitude),
+        'latitude' => $faker->latitude,
+        'longitude' => $faker->longitude,
         'image' => $faker->imageUrl()
 
     ];
