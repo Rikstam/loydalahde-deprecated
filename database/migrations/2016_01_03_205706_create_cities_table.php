@@ -1,8 +1,7 @@
 <?php
 
-//use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
-use Phaza\LaravelPostgis\Schema\Blueprint;
 
 class CreateCitiesTable extends Migration
 {
@@ -16,7 +15,8 @@ class CreateCitiesTable extends Migration
         Schema::create('cities', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
-            $table->point('location');
+            $table->double('latitude')->nullable();
+            $table->double('longitude')->nullable();
             $table->timestamps();
         });
     }

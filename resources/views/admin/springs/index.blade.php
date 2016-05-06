@@ -20,8 +20,8 @@
                 <tr>
                 <td>{{ $k + 1 }}</td>
                 <td><a href="/lahteet/{{ $spring->id }}">{{ $spring->title }}</a></td>
-                    @if ($spring->location)
-                        <td class="success">{{$spring->location}}</td>
+                    @if ($spring->latitude && $spring->longitude)
+                        <td class="success">{{$spring->latitude}} {{$spring->longitude}}</td>
                         @else
                         <td class="warning">Ei</td>
                     @endif

@@ -3507,7 +3507,9 @@ class CityTableSeeder extends Seeder
             if (strlen($c['latitude']) > 0 && strlen($c['longitude']) > 0) {
                 $city = new City();
                 $city->name = $c['city'];
-                $city->location = new \Phaza\LaravelPostgis\Geometries\Point(floatval($c['latitude']), floatval($c['longitude']));
+                $city->latitude = $c['latitude'];
+                $city->longitude = $c['longitude'];
+
                 $city->save();
             }
         }

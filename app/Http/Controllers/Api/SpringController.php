@@ -18,11 +18,12 @@ class SpringController extends Controller
     public function index()
     {
         $springs = Spring::where('visibility', true)
-            ->whereNotNull('location')
-            ->select('title','location', 'tested_at', 'status')
+            ->whereNotNull('latitude')
+            ->whereNotNull('longitude')
+            ->select('title','latitude','longitude', 'tested_at', 'status')
             ->get();
 
-        return $springs;
+        return $springs->toJson(JSON_NUMERIC_CHECK);
     }
 
 

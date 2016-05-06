@@ -67,7 +67,7 @@
 
     <div class="col-sm-10">
         @if (isset($spring->location))
-            {!! Form::text('latitude',$spring->location->getLat(), ['class' => 'form-control', 'id' => 'latitude'] ) !!}
+            {!! Form::text('latitude',$spring->latitude, ['class' => 'form-control', 'id' => 'latitude'] ) !!}
         @else
             {!! Form::text('latitude', null, ['class' => 'form-control', 'id' => 'latitude', 'placeholder'=>'12.3456789'] ) !!}
         @endif
@@ -79,7 +79,7 @@
 
     <div class="col-sm-10">
         @if (isset($spring->location))
-            {!! Form::text('longitude',$spring->location->getLng(), ['class' => 'form-control', 'id' => 'longitude'] ) !!}
+            {!! Form::text('longitude',$spring->longitude, ['class' => 'form-control', 'id' => 'longitude'] ) !!}
         @else
             {!! Form::text('longitude', null, ['class' => 'form-control', 'id' => 'longitude', 'placeholder'=>'12.3456789'] ) !!}
         @endif
