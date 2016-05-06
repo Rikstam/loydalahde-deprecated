@@ -8,7 +8,7 @@
     <link href='http://fonts.googleapis.com/css?family=Raleway:400,700' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Cabin:400,700,400italic' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-    <link href="{{ elixir('css/app.css') }}" rel="stylesheet" type="text/css">
+    <link href="/css/app.css" rel="stylesheet" type="text/css">
 
 
     <!-- Fonts
@@ -61,19 +61,12 @@
                     <li><a href="/admin">Home</a></li>
 
                     <li><a href="/admin/springs">Springs</a></li>
-                    <li><a href="/admin/posts">Posts</a></li>
-                    <li><a href="/admin/pages">Pages</a></li>
-                    <li><a href="/admin/users">Users</a></li>
-                    <li><a href="/admin/messages">Messages</a></li>
-                    <li><a href="/admin/settings">Settings</a></li>
+
                 </ul>
             </nav>
         </aside>
         @yield('content')
     </div>
 </main>
-<script src="/js/vue.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/vue-strap/1.0.8/vue-strap.min.js"></script>
-<script src="{{ asset('/js/bundle.js') }}"></script>
 </body>
 </html>
