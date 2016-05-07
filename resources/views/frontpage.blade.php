@@ -82,22 +82,20 @@
             </section>
         </div>
     </div>
-    <div class="wrapper">
-        <div class="container">
+        <div class="container-fluid map-container">
             <div class="row">
-                <section id="map" class="col-md-8 col-md-offset-2">
+                <section class="map col-xs-12">
                     <header>
                         <h2>Lähdetilanne 20.2.2015</h2>
                         <p>Lähdetilanteesta näkyy tällä hetkellä tiedossamme olevat lähteet.</p>
                     </header>
 
                     <div ng-controller="FrontPageMapController">
-                        <leaflet id="main-map" markers="markers" legend="legend" center="finlandCenter" width="100%"
+                        <leaflet id="main-map" markers="markers" legend="legend" center="finlandCenter" width="100%" defaults="defaults"
                                  height="580px"></leaflet>
                     </div>
                 </section>
             </div>
 
         </div>
-    </div>
 @endsection

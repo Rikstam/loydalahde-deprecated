@@ -6089,7 +6089,9 @@ Version: 1.0
   background-position: -682px 0; }
 
 body {
-  font-family: "Cabin", sans-serif; }
+  font-family: "Cabin", sans-serif;
+  background-color: #f7f7f7;
+  color: #777777; }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: "Raleway", sans-serif;
@@ -6125,10 +6127,13 @@ h2 {
     float: left;
     margin-right: 5px; }
 
-#map {
-  margin-bottom: 40px; }
-  #map header h2, #map header p {
-    color: #ffffff; }
+.map-container {
+  padding-left: 0;
+  padding-right: 0; }
+
+.map header h2, .map header p {
+  color: #777777;
+  text-align: center; }
 
 .legend {
   font: 14px/16px Arial, Helvetica, sans-serif;
@@ -6259,8 +6264,9 @@ button.prepended {
   border-top-right-radius: 0;
   border-bottom-right-radius: 0; }
 
-.wrapper {
-  background-color: #4f90ff; }
+.map-container {
+  padding-left: 0;
+  padding-right: 0; }
 
 .springs-list {
   padding-top: 42px; }

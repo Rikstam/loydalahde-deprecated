@@ -1,9 +1,14 @@
-#map {
-  margin-bottom: 40px;
+.map-container {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.map {
 
   header {
     h2, p {
-      color: #ffffff;
+      color: rgb(119,119,119);
+     text-align: center;
     }
   }
 

@@ -35,11 +35,10 @@
                     @endif
 
                     @if ($spring->visibility == 1)
-                    <td class="success">Näkyvissä / <a href="">Piilota</a></td>
+                    <td class="success">Näkyvissä</td>
                         @elseif($spring->visibility == 0)
-                        <td class="active">Piilossa / <a href="">Näytä</a></td>
+                        <td class="active">Piilossa</td>
                     @endif
-                    <td><a href="/admin/springs/{{$spring->id}}/save" class="btn btn-success "><i class="fa fa-check-circle-o"></i>Tallenna</a></td>
                     <td><a href="/admin/springs/{{$spring->id}}/edit" class="btn btn-primary"><i class="fa fa-pencil-square-o"></i>Muokkaa</a></td>
                 </tr>
              @endforeach

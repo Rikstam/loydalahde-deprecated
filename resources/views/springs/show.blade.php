@@ -23,18 +23,26 @@
                 <hr>
                 {!! $spring->description !!}
 
-                @if ($spring->latitude && $spring->longitude)
-                    <div ng-controller="SingleSpringController">
-                        <leaflet class="single-map"
-                                 markers="{m1: {lat: {{$spring->latitude}},lng: {{$spring->longitude}}  } }"
-                                 center="{lat: {{$spring->latitude}}, lng: {{$spring->longitude}}, zoom: 10}"
-                                 width="100%"
-                                 height="580px">
 
-                        </leaflet>
-                    </div>
-                @endif
             </article>
+
         </div>
+    </div>
+    <div class="container-fluid map-container">
+        <div class="row">
+    <section class="map col-xs-12">
+        @if ($spring->latitude && $spring->longitude)
+            <div ng-controller="SingleSpringController">
+                <leaflet class="single-map"
+                         markers="{m1: {lat: {{$spring->latitude}},lng: {{$spring->longitude}}  } }"
+                         center="{lat: {{$spring->latitude}}, lng: {{$spring->longitude}}, zoom: 10}"
+                         width="100%"
+                         height="580px">
+
+                </leaflet>
+            </div>
+        @endif
+    </section>
+    </div>
     </div>
 @endsection

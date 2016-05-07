@@ -54,9 +54,9 @@
 </header>
 <main class="container-fluid">
     <div class="row">
-        <aside class="col-md-2" >
+        <aside class="col-md-2" id="main-admin-sidebar">
             <h2>Navigation</h2>
-            <nav class="admin-side-nav" data-spy="affix" data-offset-top="60" data-offset-bottom="200">
+            <nav class="admin-side-nav">
                 <ul>
                     <li><a href="/admin">Home</a></li>
 
