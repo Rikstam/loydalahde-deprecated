@@ -32,8 +32,8 @@ class AdminTest extends TestCase
     public function testUnLoggedInUserCannotEditASpring()
     {
         $spring = factory(Spring::class)->create();
-        $this->visit('/admin/springs/' . $spring->id . '/edit')
-            ->assertRedirectedTo('/login');
+        $this->call('GET','/admin/springs/' . $spring->id . '/edit');
+        $this->assertRedirectedTo('/login');
     }
 
     public function testRegistrationIsDisabled()
