@@ -58,6 +58,8 @@ FROM springs AS s WHERE lower(s.title) LIKE ? AND s.visibility = TRUE', [$title]
             $searchTerm = 'Kaikki';
         }
 
-        return view('springs.index', compact('springs', 'searchTerm'));
+        $seoTitle = 'Lähteet';
+
+        return view('springs.index', compact('springs', 'searchTerm', 'seoTitle'));
     }
 }
