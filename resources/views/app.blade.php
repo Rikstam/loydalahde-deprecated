@@ -58,15 +58,8 @@
 
 </main>
 
-<footer id="main-footer">
-    <div class="container">
-        <div class="row">
-            <div class="col-xs-12">
-                <p class="copyright">&copy; 2016 Löydä Lähde</p>
-            </div>
-        </div>
-    </div>
-</footer>
+@include('partials.footer')
+
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <script src="http://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.js"></script>
 

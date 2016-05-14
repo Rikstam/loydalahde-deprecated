@@ -6300,10 +6300,20 @@ button.prepended {
     color: #a2a2a2; }
 
 #main-footer {
-  background-color: #0421D4;
-  padding: 30px 0 30px 0; }
-  #main-footer p {
+  padding: 10px 0 10px 0;
+  background-color: #132ED6; }
+  #main-footer h4, #main-footer p, #main-footer li, #main-footer a {
     color: #ffffff; }
+
+.copyright {
+  padding-top: 10px;
+  background-color: #4f90ff; }
+  .copyright p {
+    color: #ffffff; }
+
+.some-icons i {
+  font-size: 28px;
+  color: #ffffff; }
 
 #main-admin-sidebar {
   background-color: #000; }
