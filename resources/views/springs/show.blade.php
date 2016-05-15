@@ -36,6 +36,7 @@
                 <leaflet class="single-map"
                          markers="{m1: {lat: {{$spring->latitude}},lng: {{$spring->longitude}}  } }"
                          center="{lat: {{$spring->latitude}}, lng: {{$spring->longitude}}, zoom: 10}"
+                         defaults="defaults"
                          width="100%"
                          height="580px">
 
