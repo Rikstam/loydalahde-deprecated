@@ -26,11 +26,16 @@
                     <div class="row">
                         <article class="spring col-xs-12">
                             <div class="row">
-
                                 <header class="col-xs-12">
                                     <h2>{{ $spring->title }}</h2>
                                     @if($spring->alias)
                                         <h3>Muut nimet: {{ $spring->alias }}</h3>
+                                    @endif
+
+                                    @if(isset($spring->distance))
+                                        <span class="distance">
+Etäisyys paikasta {{$searchTerm}} <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+                                            {{round($spring->distance, 2)}}km</span>
                                     @endif
                                 </header>
 
@@ -42,8 +47,6 @@
                                     </a>
 
                                 </div>
-
-
                             </div>
                         </article>
                         <div class="col-xs-12">

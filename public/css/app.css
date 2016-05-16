@@ -6289,6 +6289,9 @@ button.prepended {
   padding-top: 60px;
   padding-bottom: 60px; }
 
+.distance {
+  font-weight: 800; }
+
 .article {
   margin-top: 20px;
   margin-bottom: 20px; }
