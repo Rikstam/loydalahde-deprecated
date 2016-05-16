@@ -7064,7 +7064,8 @@ app.config(function ($interpolateProvider) {
 app.controller("FrontPageMapController", ['$scope', '$http', function ($scope, $http) {
 
     $scope.springList = {};
-    var markerIcon = 'fa-check-circle-o';
+    //var markerIcon = 'fa-check-circle-o';
+    var markerIcon = 'fa fa-tint';
     var markerColor = 'green';
 
     $http.get('/api/springs').then(function (resp) {
@@ -7072,7 +7073,7 @@ app.controller("FrontPageMapController", ['$scope', '$http', function ($scope, $
         // For JSON responses, resp.data contains the result
 
         resp.data.forEach(function (item, index) {
-
+/*
             switch (item.status) {
                 case 'juomakelpoista':
                     markerIcon = 'fa-check-circle';
@@ -7087,7 +7088,7 @@ app.controller("FrontPageMapController", ['$scope', '$http', function ($scope, $
                     markerColor = 'red';
                     break;
             }
-
+*/
             $scope.springList[index] = {
                 lat: item.latitude,
                 lng: item.longitude,
@@ -7097,8 +7098,8 @@ app.controller("FrontPageMapController", ['$scope', '$http', function ($scope, $
                 icon: {
                     type: 'awesomeMarker',
                     prefix: 'fa',
-                    icon: markerIcon,
-                    markerColor: markerColor
+                    icon: markerIcon
+                    //markerColor: markerColor
                 }
 
             }
