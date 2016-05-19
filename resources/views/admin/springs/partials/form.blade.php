@@ -100,7 +100,14 @@
         {!! Form::radio('visibility', 'false') !!}
     </div>
 </div>
-
+<div class="form-group">
+    @if (isset($spring->image))
+    <div class="spring-image col-sm-10 col-sm-offset-2">
+        <p>Nykyinen kuva</p>
+        <img class="img-responsive" src="{{ url('/')}}/storage/{{ $spring->image }}" alt="">
+    </div>
+    @endif
+</div>
 <div class="form-group">
     {!! Form::label('image','Spring Image:', ['class' => 'col-sm-2 control-label']) !!}
     {!! Form::file('image', null) !!}
