@@ -27,7 +27,7 @@ $factory->define(App\Spring::class, function ($faker) {
         'slug' => 'multsun-lahde',
         'description' => $faker->text,
         'short_description' => 'Veljesten nimet vanhimmasta nuorimpaan ovat: Juhani, Tuomas, Aapo, Simeoni, Timo, Lauri ja Eero. Ovat heistä Tuomas ja Aapo kaksoispari ja samoin Timo ja Lauri.',
-        'status'=>'juomakelpoista',
+        'status' => 'juomakelpoista',
         'tested_at' => '10-11-1981',
         'visibility' => true,
         'latitude' => $faker->latitude,
@@ -37,3 +37,10 @@ $factory->define(App\Spring::class, function ($faker) {
     ];
 });
 
+$factory->define(App\Page::class, function ($faker) {
+    return [
+        'title' => $faker->sentence,
+        'content' => $faker->text,
+        'meta_description' => $faker->text(150)
+    ];
+});

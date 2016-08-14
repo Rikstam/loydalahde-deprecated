@@ -7,7 +7,6 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Spring;
 use App\Http\Requests\SpringRequest;
-use Phaza\LaravelPostgis\Geometries\Point;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\File;
 
@@ -38,7 +37,7 @@ class SpringController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  Request  $request
+     * @param  SpringRequest  $request
      * @return Response
      */
     public function store(SpringRequest $request)

@@ -20,7 +20,7 @@ class SpringController extends Controller
         $springs = Spring::where('visibility', true)
             ->whereNotNull('latitude')
             ->whereNotNull('longitude')
-            ->select('title','latitude','longitude', 'tested_at', 'status')
+            ->select('title','latitude','longitude', 'tested_at', 'status', 'slug')
             ->get();
 
         return $springs->toJson(JSON_NUMERIC_CHECK);

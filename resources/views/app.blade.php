@@ -46,6 +46,7 @@
                     <ul class="nav navbar-nav">
                         <li class=""><a href="/">Etusivu <span class="sr-only">(current)</span></a></li>
                         <li><a href="/lahteet">Lähteet</a></li>
+                        <li><a href="/usein-kysytyt-kysymykset">Usein kysytyt kysymykset</a></li>
                     </ul>
                 </div><!-- /.navbar-collapse -->
             </div><!-- /.container-fluid -->

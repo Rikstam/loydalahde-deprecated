@@ -7092,7 +7092,7 @@ app.controller("FrontPageMapController", ['$scope', '$http', function ($scope, $
             $scope.springList[index] = {
                 lat: item.latitude,
                 lng: item.longitude,
-                message: '<h4>' + item.title + '</h4><p>Lähteen tila: <strong>' + item.status + '</strong></p><p>Lähteen laatu analysoitu: <strong>' + item.tested_at + '</strong></p>',
+                message: '<h4>' + item.title + '</h4><p><a href="/lahteet/' + item.slug +'">Tarkemmat tiedot</a></p>',
                 focus: false,
                 draggable: false,
                 icon: {

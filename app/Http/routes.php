@@ -18,6 +18,21 @@ Route::group(['middleware' => 'web'], function () {
         return view('frontpage');
     });
 
+    Route::get('usein-kysytyt-kysymykset', function () {
+
+        $page = App\Page::findBySlug('usein-kysytyt-kysymykset');
+
+        return view('pages.show', compact('page'));
+    });
+
+    Route::get('vastuuvapauslauseke', function () {
+
+    });
+
+    Route::get('missio', function () {
+
+    });
+
     Route::post('hakutulokset',
         //return sprintf('Hakutulokset termille "%s"', Request::input('search'));
         'Api\SearchController@searchByTerm'
@@ -25,17 +40,18 @@ Route::group(['middleware' => 'web'], function () {
 
     Route::resource('lahteet', 'SpringController', ['only' => ['index', 'show']]);
 
-    Route::get('oldsprings', function () {
-        $client = new \GuzzleHttp\Client(['base_uri' => 'http://loydalahde.com/wp-json/']);
-        $response = $client->get('posts?filter[posts_per_page]=-1');
-        $bod = json_decode($response->getBody());
-        //dd($bod);
-        foreach ($bod as $spr) {
-            echo $spr->title;
-        }
+    /* Route::get('oldsprings', function () {
+         $client = new \GuzzleHttp\Client(['base_uri' => 'http://loydalahde.com/wp-json/']);
+         $response = $client->get('posts?filter[posts_per_page]=-1');
+         $bod = json_decode($response->getBody());
+         //dd($bod);
+         foreach ($bod as $spr) {
+             echo $spr->title;
+         }
 
-        //dd($bod);
-    });
+         //dd($bod);
+     });
+    */
 
 });
 
@@ -51,9 +67,11 @@ Route::group([
     'prefix' => 'admin',
     'namespace' => 'Admin',
     'middleware' => ['web', 'auth']
-    ], function () {
+], function () {
     Route::get('/', 'HomeController@index');
     Route::resource('springs', 'SpringController');
+    Route::resource('pages', 'PageController');
+
 });
 
 Route::group(['middleware' => 'web'], function () {

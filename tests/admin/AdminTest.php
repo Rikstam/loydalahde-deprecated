@@ -86,4 +86,29 @@ class AdminTest extends TestCase
             ->visit('/admin/springs/' . $spring->id . '/edit')
             ->see($spring->title);
     }
+
+    public function test_it_creates_a_page()
+    {
+        $user = factory(App\User::class)->create();
+
+        $this->actingAs($user)
+            ->visit('/admin/pages/create')
+            ->type('Page title test', 'title')
+            ->type('page-title-test', 'slug')
+            ->type('this is the meta description', 'meta_description')
+            ->type('lorem ipsum jee jee jee', 'content')
+            ->press('Lisää sivu')
+            ->see('Page title test');
+
+    }
+
+    public function test_a_page_can_be_edited()
+    {
+        $user = factory(App\User::class)->create();
+        $page = factory(App\Page::class)->create();
+
+        $this->actingAs($user)
+            ->visit('/admin/pages/' . $page->id . '/edit')
+            ->see($page->title);
+    }
 }

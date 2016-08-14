@@ -62,6 +62,8 @@
 
                     <li><a href="/admin/springs">Springs</a></li>
 
+                    <li><a href="/admin/pages">Pages</a></li>
+
                 </ul>
             </nav>
         </aside>

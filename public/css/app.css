@@ -6292,6 +6292,9 @@ button.prepended {
 .distance {
   font-weight: 800; }
 
+.page h2 {
+  text-align: left; }
+
 .article {
   margin-top: 20px;
   margin-bottom: 20px; }
