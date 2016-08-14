@@ -17,7 +17,7 @@
     {!! Form::label('meta_description', 'Meta description:', ['class' => 'col-sm-2 control-label']) !!}
 
     <div class="col-sm-10">
-        {!! Form::textarea('meta_description', null, ['class' => 'form-control', 'id' => 'meta-description'] ) !!}
+        {!! Form::textarea('meta_description', null, ['class' => 'form-control', 'id' => 'meta-description', 'rows' => '25'] ) !!}
     </div>
 </div>
 

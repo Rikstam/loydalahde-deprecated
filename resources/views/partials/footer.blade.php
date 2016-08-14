@@ -28,11 +28,9 @@
         <div class="col-sm-4">
             <h4>Yhteystiedot</h4>
             <ul class="list-unstyled">
-                        <a href="mailto:">info@loydalahde.com</a></span>
+                <a href="mailto:">info@loydalahde.com</a></span>
                 </li>
-
             </ul>
-
         </div>
         <!-- //Contact Section End -->
     </div>

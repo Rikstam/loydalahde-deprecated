@@ -49,7 +49,7 @@
     {!! Form::label('description', 'Description:', ['class' => 'col-sm-2 control-label']) !!}
 
     <div class="col-sm-10">
-        {!! Form::textarea('description', null, ['class' => 'form-control', 'id' => 'description'] ) !!}
+        {!! Form::textarea('description', null, ['class' => 'form-control', 'id' => 'description', 'rows' => '45'] ) !!}
     </div>
 </div>
 

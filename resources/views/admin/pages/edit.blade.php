@@ -1,8 +1,7 @@
 @extends('admin/admin')
 
 @section('content')
-
-    <div class="col-md-6">
+    <div class="col-md-8">
         <h1>Muokkaa sivua</h1>
         <h2>{{ $page->title }}</h2>
         <table class="table">
@@ -13,7 +12,8 @@
             </tr>
             </thead>
             <tbody>
-            <tr><td>{{ $page->created_at }}
+            <tr>
+                <td>{{ $page->created_at }}
                 <td>{{ $page->updated_at }}</td>
             </tr>
             </tbody>
