@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <div class="col-md-6">
+    <div class="col-md-8">
         <h1>Lisää Sivu</h1>
 
         {!! Form::open(['url' => 'admin/pages','class' => 'form-horizontal']) !!}

@@ -26,11 +26,15 @@ Route::group(['middleware' => 'web'], function () {
     });
 
     Route::get('vastuuvapauslauseke', function () {
+        $page = App\Page::findBySlug('vastuuvapauslauseke');
 
+        return view('pages.show', compact('page'));
     });
 
     Route::get('missio', function () {
+        $page = App\Page::findBySlug('missio');
 
+        return view('pages.show', compact('page'));
     });
 
     Route::post('hakutulokset',
