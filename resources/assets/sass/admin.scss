@@ -1,5 +1,4 @@
 @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
-@import "lib/awesome-marker";
 @import "variables";
 @import "global";
 @import "components/header";
@@ -11,7 +10,26 @@
 @import "components/pages";
 @import "components/articles";
 @import "components/footer";
+@import "lib/froala-editor";
 
+#main-admin-sidebar {
+  background-color: #000;
+  h2 {
+    color: #fff;
+  }
+}
 
+.admin-side-nav {
+  ul {
+    list-style: none;
+    li {
+      padding: 10px 0 10px 0;
+      text-transform: uppercase;
+      a {
+        color: #fff;
+        font-size: 18px;
+      }
+    }
 
-
+  }
+}

@@ -1,5 +1,5 @@
 <div class="form-group">
-    {!! Form::label('title', 'Title:', ['class' => 'col-sm-2 control-label']) !!}
+    {!! Form::label('title', 'Otsikko:', ['class' => 'col-sm-2 control-label']) !!}
     <div class="col-sm-10">
         {!! Form::text('title', null, ['class' => 'form-control', 'id' => 'title'] ) !!}
     </div>
@@ -7,25 +7,26 @@
 </div>
 
 <div class="form-group">
-    {!! Form::label('slug', 'Slug:', ['class' => 'col-sm-2 control-label']) !!}
+    {!! Form::label('slug', 'Url-teksti:', ['class' => 'col-sm-2 control-label']) !!}
     <div class="col-sm-10">
         {!! Form::text('slug', null, ['class' => 'form-control', 'id' => 'slug'] ) !!}
     </div>
 </div>
 
 <div class="form-group">
-    {!! Form::label('meta_description', 'Meta description:', ['class' => 'col-sm-2 control-label']) !!}
+    {!! Form::label('meta_description', 'Meta kuvaus:', ['class' => 'col-sm-2 control-label']) !!}
 
     <div class="col-sm-10">
-        {!! Form::textarea('meta_description', null, ['class' => 'form-control', 'id' => 'meta-description', 'rows' => '25'] ) !!}
+        {!! Form::textarea('meta_description', null, ['class' => 'form-control', 'id' => 'meta-description', 'rows' => '5'] ) !!}
     </div>
 </div>
 
 <div class="form-group">
-    {!! Form::label('content', 'Content:', ['class' => 'col-sm-2 control-label']) !!}
+    {!! Form::label('content', 'Leipäteksti:', ['class' => 'col-sm-2 control-label']) !!}
 
     <div class="col-sm-10">
         {!! Form::textarea('content', null, ['class' => 'form-control', 'id' => 'content'] ) !!}
+
     </div>
 </div>
 

@@ -2,7 +2,7 @@
 
 @section('content')
 
-        <div class="col-md-6">
+        <div class="col-md-8">
             <h1>Muokkaa lähdettä</h1>
             <h2>{{ $spring->title }}</h2>
             <table class="table">

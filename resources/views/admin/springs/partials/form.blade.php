@@ -1,6 +1,6 @@
 <div class="form-group">
 
-    {!! Form::label('title', 'Title:', ['class' => 'col-sm-2 control-label']) !!}
+    {!! Form::label('title', 'Nimi:', ['class' => 'col-sm-2 control-label']) !!}
     <div class="col-sm-10">
         {!! Form::text('title', null, ['class' => 'form-control', 'id' => 'title'] ) !!}
     </div>
@@ -15,7 +15,7 @@
 </div>
 
 <div class="form-group">
-    {!! Form::label('slug', 'Slug:', ['class' => 'col-sm-2 control-label']) !!}
+    {!! Form::label('slug', 'Url-teksti:', ['class' => 'col-sm-2 control-label']) !!}
     <div class="col-sm-10">
         {!! Form::text('slug', null, ['class' => 'form-control', 'id' => 'slug'] ) !!}
     </div>
@@ -23,7 +23,7 @@
 
 
 <div class="form-group">
-    {!! Form::label('status','Status',['class' => 'col-sm-2 control-label']) !!}
+    {!! Form::label('status','Tila',['class' => 'col-sm-2 control-label']) !!}
     <div class="col-sm-10">
 
         {!! Form::select('status',
@@ -37,7 +37,7 @@
 </div>
 
 <div class="form-group">
-    {!! Form::label('tested_at','Tested',['class' => 'col-sm-2 control-label']) !!}
+    {!! Form::label('tested_at','Testattu',['class' => 'col-sm-2 control-label']) !!}
 
     <div class="col-sm-10">
         {!! Form::date('tested_at', null, ['class' => 'form-control', 'id' => 'tested_at']) !!}
@@ -46,7 +46,7 @@
 
 
 <div class="form-group">
-    {!! Form::label('description', 'Description:', ['class' => 'col-sm-2 control-label']) !!}
+    {!! Form::label('description', 'Leipäteksti:', ['class' => 'col-sm-2 control-label']) !!}
 
     <div class="col-sm-10">
         {!! Form::textarea('description', null, ['class' => 'form-control', 'id' => 'description', 'rows' => '45'] ) !!}
@@ -54,9 +54,9 @@
 </div>
 
 <div class="form-group">
-    {!! Form::label('short_description', 'Short Description:', ['class' => 'col-sm-2 control-label']) !!}
+    {!! Form::label('short_description', 'Lyhyt kuvaus:', ['class' => 'col-sm-2 control-label']) !!}
     <div class="col-sm-10">
-        {!! Form::textarea('short_description', null, ['class' => 'form-control', 'id' => 'short_description'] ) !!}
+        {!! Form::textarea('short_description', null, ['class' => 'form-control', 'id' => 'short_description', 'rows' => '20'] ) !!}
     </div>
 </div>
 
@@ -102,15 +102,29 @@
 </div>
 <div class="form-group">
     @if (isset($spring->image))
-    <div class="spring-image col-sm-10 col-sm-offset-2">
-        <p>Nykyinen kuva</p>
-        <img class="img-responsive" src="{{ url('/')}}/storage/{{ $spring->image }}" alt="">
-    </div>
+        <hr>
+
+        <div class="spring-image col-sm-6 col-sm-offset-2">
+            <img class="img-responsive" src="{{ url('/')}}/storage/{{ $spring->image }}" alt="">
+
+        </div>
+
+        <div class=" col-sm-2">
+            {{-- <a href="#" class="btn btn-danger">Poista kuva</a> --}}
+        </div>
+        @else
+
+        <div class="spring-image col-sm-6 col-sm-offset-2">
+            <p>Ei kuvaa</p>
+
+        </div>
     @endif
 </div>
 <div class="form-group">
-    {!! Form::label('image','Spring Image:', ['class' => 'col-sm-2 control-label']) !!}
+    {!! Form::label('image','Lähteen kuva:', ['class' => 'col-sm-2 control-label']) !!}
     {!! Form::file('image', null) !!}
+
+    <hr>
 </div>
 
 <div class="form-group">

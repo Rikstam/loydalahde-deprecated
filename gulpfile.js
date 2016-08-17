@@ -12,12 +12,32 @@ var elixir = require('laravel-elixir');
  */
 
 elixir(function(mix) {
+
+    var dirBase = '../../../app/bower_components';
+
+    var froalaPluginDir = dirBase + '/froala-wysiwyg-editor/js/plugins/';
+
     mix.copy('node_modules/bootstrap-sass/assets/fonts/', 'public/fonts');
-    mix.sass(['app.scss']);
+    mix.sass(['app.scss'], 'public/css/frontend.css');
+    mix.sass(['admin.scss'], 'public/css/backend.css');
     //mix.babel('scripts.js');
     mix.scripts(['../../../app/bower_components/Leaflet.awesome-markers/dist/leaflet.awesome-markers.js','../../../app/bower_components/angular-simple-logger/dist/angular-simple-logger.js','../../../app/bower_components/angular-leaflet-directive/dist/angular-leaflet-directive.js','../../../app/bower_components/angucomplete-alt/angucomplete-alt.js','app.js'], 'public/js/scripts.js');
+    mix.scripts([
+        dirBase + '/jquery/dist/jquery.js',
+        dirBase +'/froala-wysiwyg-editor/js/froala_editor.min.js',
+        froalaPluginDir  + '/align.min.js',
+        froalaPluginDir  + '/paragraph_format.min.js',
+        froalaPluginDir  + '/paragraph_style.min.js',
+        froalaPluginDir  + '/quote.min.js',
+        froalaPluginDir  + '/colors.min.js',
+        dirBase +'/vue/dist/vue.js',
+        'admin.js'
+    ], 'public/js/backend.js');
+
     //mix.phpUnit();
-    mix.version(['/css/app.css']);
+    //mix.version(['/css/app.css']);
+    //mix.version(['/css/admin.css']);
+
 });
 
 
