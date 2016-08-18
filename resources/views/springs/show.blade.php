@@ -16,12 +16,15 @@
                 <header>
                     <h1>{{ $spring->title }}</h1>
                     <h2>{{ $spring->alias }}</h2>
-                    @if ($spring->image)
-                        <img src="{{ url('/')}}/storage/{{ $spring->image }}" alt="{{ $spring->title }}"
-                             class="img-responsive">
-                    @endif
+
                     <hr>
                 </header>
+
+                @if ($spring->image)
+                    <img src="{{ url('/')}}/storage/{{ $spring->image }}" alt="{{ $spring->title }}"
+                         class="img-responsive">
+                @endif
+
                 {!! $spring->description !!}
 
 

@@ -5976,7 +5976,7 @@ button.prepended {
     background: #3C5EDE;
     text-align: center;
     margin-bottom: 30px; }
-    .single-spring header h1 {
+    .single-spring header h1, .single-spring header h2 {
       color: #ffffff; }
 
 .distance {
