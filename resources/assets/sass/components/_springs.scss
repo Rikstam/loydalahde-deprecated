@@ -9,10 +9,10 @@
       background: #3C5EDE;
 
       text-align: center;
+      height: 150px;
 
       h2 {
         font-size: 18px;
-        height: 25px;
         margin-top: 0;
         //text-align: left;
         color: #fff;
@@ -23,6 +23,7 @@
         margin-top: 0;
         text-align: left;
         color: #ffffff;
+        letter-spacing: 1px;
       }
     }
     margin-bottom: 30px;
@@ -66,7 +67,14 @@
   background: rgb(255, 255, 255);
   border: 1px solid $border-color;
   padding: 20px;
-  height: 320px;
+  height: 270px;
 
 
+}
+
+span.pagination-totals {
+  display: block;
+  width: 24px;
+  margin: auto;
+  font-size: 16px;
 }

@@ -5771,6 +5771,9 @@ span.beta {
   color: red;
   font-weight: 200; }
 
+.pager {
+  margin-top: 0; }
+
 .navbar {
   margin-bottom: 0; }
 
@@ -5943,10 +5946,10 @@ button.prepended {
       border-top-left-radius: 10px;
       padding: 20px;
       background: #3C5EDE;
-      text-align: center; }
+      text-align: center;
+      height: 150px; }
       .springs-list .spring header h2 {
         font-size: 18px;
-        height: 25px;
         margin-top: 0;
         color: #fff;
         letter-spacing: 2px; }
@@ -5954,7 +5957,8 @@ button.prepended {
         font-size: 14px;
         margin-top: 0;
         text-align: left;
-        color: #ffffff; }
+        color: #ffffff;
+        letter-spacing: 1px; }
     .springs-list .spring .spring-status {
       text-align: center;
       padding: 5px;
@@ -5985,7 +5989,13 @@ button.prepended {
   background: white;
   border: 1px solid #eeeeee;
   padding: 20px;
-  height: 320px; }
+  height: 270px; }
+
+span.pagination-totals {
+  display: block;
+  width: 24px;
+  margin: auto;
+  font-size: 16px; }
 
 .page h2 {
   text-align: left; }

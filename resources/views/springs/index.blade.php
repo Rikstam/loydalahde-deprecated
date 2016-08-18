@@ -62,6 +62,7 @@ Etäisyys paikasta {{$searchTerm}} <i class="fa fa-long-arrow-right" aria-hidden
             </div>
 
             <div class="col-xs-12">
+                <span class="pagination-totals">{{$springs->currentPage()}}/7</span>
                 {!! $springs->links() !!}
             </div>
         </div>
