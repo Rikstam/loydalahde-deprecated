@@ -14,9 +14,7 @@
 
 Route::group(['middleware' => 'web'], function () {
 
-    Route::get('/', function () {
-        return view('frontpage');
-    });
+    Route::get('/', 'PageController@getFrontPage');
 
     Route::get('usein-kysytyt-kysymykset', function () {
 

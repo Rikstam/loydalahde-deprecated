@@ -1,18 +1,31 @@
 .springs-list {
   padding-top: 42px;
   .spring {
+
     header {
+      border-top-right-radius: 10px;
+      border-top-left-radius: 10px;
+      padding: 20px;
+      background: #3C5EDE;
+
+      text-align: center;
+
       h2 {
         font-size: 18px;
         height: 25px;
         margin-top: 0;
-        text-align: left;
+        //text-align: left;
+        color: #fff;
+        letter-spacing: 2px;
       }
       h3 {
         font-size: 14px;
         margin-top: 0;
+        text-align: left;
+        color: #ffffff;
       }
     }
+    margin-bottom: 30px;
 
     .spring-status {
       text-align: center;
@@ -27,8 +40,33 @@
 .single-spring {
   padding-top: 60px;
   padding-bottom: 60px;
+  header {
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    padding: 20px;
+    background: #3C5EDE;
+
+    text-align: center;
+    margin-bottom: 30px;
+    h1 {
+      color: #ffffff;
+    }
+  }
 }
 
 .distance {
   font-weight: 800;
+  color: #ffffff;
+
+  font-size: 16px;
+  letter-spacing: 1px;
+}
+
+.wrap {
+  background: rgb(255, 255, 255);
+  border: 1px solid $border-color;
+  padding: 20px;
+  height: 320px;
+
+
 }

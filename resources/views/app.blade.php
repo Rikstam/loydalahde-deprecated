@@ -38,7 +38,7 @@
                         <span class="icon-bar"></span>
                     </button>
                     <a class="navbar-brand" href="/"><img src="{{ asset('/img/Kompassi_Logo.png') }}" class="img-responsive" alt="Löydä lähde" width="45">
-                        <h1>Löydä lähde</h1></a>
+                        <h1>Löydä lähde <span class="beta">beta</span></h1></a>
                 </div>
 
                 <!-- Collect the nav links, forms, and other content for toggling -->

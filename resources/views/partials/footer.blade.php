@@ -3,10 +3,18 @@
     <div class="container footer-text">
         <!-- About Us Section Start -->
         <div class="col-sm-4">
+            <h4>Ajankohtaista</h4>
+            <p>18.08.2016 <br>Tervetuloa uudelle loydalahde.com-sivustolle, sivu on nk. julkisessa beta-vaiheessa ja kehitämme sivua niin ulkoasun, sisällön, kuin toiminnallisuuden suhteen aktiivisesti.
+            Kiitos jo etukäteen kärsivällisyydestäsi!
+            </p>
+        </div>
+
+        <div class="col-sm-4">
             <h4>Tietoa</h4>
             <p>
                 Tämä sivusto on luotu tarjoamaan mahdollisimman laadukasta informaatiota luonnonlähteiden ominaisuuksista ja sijainneista ympäri Suomea.
-                Sivuston ylläpito pyrkii parhaalla mahdollisella tavalla arvioimaan ja päivittämään sivustolle ainoastaan yleiseen käyttöön tarkoitettuja lähteitä, joiden käytöstä ei aiheudu suoraa tai välillistä haittaa kenellekään. Jos sivustolle on ilmoitettu tietoa lähteestä, joka on yksityisomistuksessa, jonka käyttö häiritsee lähialueen asukkaita tmv. niin ilmoitathan asiasta ylläpidolle.            </p>
+                Sivuston ylläpito pyrkii parhaalla mahdollisella tavalla arvioimaan ja päivittämään sivustolle ainoastaan yleiseen käyttöön tarkoitettuja lähteitä, joiden käytöstä ei aiheudu suoraa tai välillistä haittaa kenellekään.
+                           </p>
             {{-- <h4>Seuraa</h4>
 
             <ul class="list-inline some-icons">
@@ -28,7 +36,7 @@
         <div class="col-sm-4">
             <h4>Yhteystiedot</h4>
             <ul class="list-unstyled">
-                <a href="mailto:">info@loydalahde.com</a></span>
+                <a href="mailto:info@loydalahde.com">info@loydalahde.com</a></span>
                 </li>
             </ul>
         </div>

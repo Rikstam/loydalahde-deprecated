@@ -15,7 +15,7 @@ app.controller("FrontPageMapController", ['$scope', '$http', function ($scope, $
     var markerColor = 'green';
 
     $http.get('/api/springs').then(function (resp) {
-        console.log('Success', resp);
+        //console.log('Success', resp);
         // For JSON responses, resp.data contains the result
 
         resp.data.forEach(function (item, index) {
@@ -53,7 +53,7 @@ app.controller("FrontPageMapController", ['$scope', '$http', function ($scope, $
 
 
     }, function (err) {
-        console.error('ERR', err);
+        //console.error('ERR', err);
         // err.status will contain the status code
     });
 

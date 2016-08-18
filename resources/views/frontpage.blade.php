@@ -17,7 +17,7 @@
     <div class="container">
         <div class="row">
             <section id="news" class="col-md-8 col-md-offset-2">
-                <!--  <h1 id="mission-statement">Löydä lähde lähialueeltasi ja auta pitämään lähdevesi yhteisessä
+    {{--  <h1 id="mission-statement">Löydä lähde lähialueeltasi ja auta pitämään lähdevesi yhteisessä
                     omistuksessa.</h1>
                 <hr>
 
@@ -78,7 +78,7 @@
                         <a href="#">Kaikki uutiset</a>
                     </div>
                 </div>
--->
+--}}
             </section>
         </div>
     </div>
@@ -86,7 +86,7 @@
             <div class="row">
                 <section class="map col-xs-12">
                     <header>
-                        <h2>Lähdetilanne 20.2.2015</h2>
+                        <h2>Lähdetilanne {{$current_date}}</h2>
                         <p>Lähdetilanteesta näkyy tällä hetkellä tiedossamme olevat lähteet.</p>
                     </header>
 

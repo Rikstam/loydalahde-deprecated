@@ -19,7 +19,7 @@ class SpringController extends Controller
     {
         //return Spring::all();
 
-        $springs = Spring::where('visibility', true)->orderBy('title','asc')->simplePaginate(10);
+        $springs = Spring::where('visibility', true)->orderBy('title','asc')->simplePaginate(12);
 
         $seoTitle = 'Lähteet';
         return view('springs.index', compact('springs', 'seoTitle'));

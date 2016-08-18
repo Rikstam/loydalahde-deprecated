@@ -5762,6 +5762,15 @@ h2 {
   text-transform: uppercase;
   font-size: 14px; }
 
+.btn.btn-primary {
+  background: #3C5EDE;
+  letter-spacing: 1px; }
+
+span.beta {
+  font-size: 12px;
+  color: red;
+  font-weight: 200; }
+
 .navbar {
   margin-bottom: 0; }
 
@@ -5770,7 +5779,8 @@ h2 {
   border: none;
   border-radius: 0; }
   .navbar-default .navbar-nav > li > a {
-    color: white; }
+    color: white;
+    letter-spacing: 1px; }
     .navbar-default .navbar-nav > li > a:hover {
       color: white;
       text-decoration: underline; }
@@ -5926,27 +5936,56 @@ button.prepended {
 
 .springs-list {
   padding-top: 42px; }
-  .springs-list .spring header h2 {
-    font-size: 18px;
-    height: 25px;
-    margin-top: 0;
-    text-align: left; }
-  .springs-list .spring header h3 {
-    font-size: 14px;
-    margin-top: 0; }
-  .springs-list .spring .spring-status {
-    text-align: center;
-    padding: 5px;
-    font-weight: bold;
-    text-transform: uppercase;
-    display: block; }
+  .springs-list .spring {
+    margin-bottom: 30px; }
+    .springs-list .spring header {
+      border-top-right-radius: 10px;
+      border-top-left-radius: 10px;
+      padding: 20px;
+      background: #3C5EDE;
+      text-align: center; }
+      .springs-list .spring header h2 {
+        font-size: 18px;
+        height: 25px;
+        margin-top: 0;
+        color: #fff;
+        letter-spacing: 2px; }
+      .springs-list .spring header h3 {
+        font-size: 14px;
+        margin-top: 0;
+        text-align: left;
+        color: #ffffff; }
+    .springs-list .spring .spring-status {
+      text-align: center;
+      padding: 5px;
+      font-weight: bold;
+      text-transform: uppercase;
+      display: block; }
 
 .single-spring {
   padding-top: 60px;
   padding-bottom: 60px; }
+  .single-spring header {
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    padding: 20px;
+    background: #3C5EDE;
+    text-align: center;
+    margin-bottom: 30px; }
+    .single-spring header h1 {
+      color: #ffffff; }
 
 .distance {
-  font-weight: 800; }
+  font-weight: 800;
+  color: #ffffff;
+  font-size: 16px;
+  letter-spacing: 1px; }
+
+.wrap {
+  background: white;
+  border: 1px solid #eeeeee;
+  padding: 20px;
+  height: 320px; }
 
 .page h2 {
   text-align: left; }

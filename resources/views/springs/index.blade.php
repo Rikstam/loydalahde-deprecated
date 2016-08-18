@@ -14,7 +14,7 @@
     <div class="container springs-list">
 
         <div class="row">
-            <div class="col-xs-12 col-md-8 col-md-offset-2">
+            <div class="col-xs-12">
                 <header>
                     @if (isset($searchTerm))
                         <h1>Hakutulokset: {{$searchTerm}}</h1>
@@ -22,38 +22,43 @@
                         <h1>Lähteet</h1>
                     @endif
                 </header>
-                @foreach ($springs as $spring)
-                    <div class="row">
-                        <article class="spring col-xs-12">
-                            <div class="row">
-                                <header class="col-xs-12">
-                                    <h2>{{ $spring->title }}</h2>
-                                    @if($spring->alias)
-                                        <h3>Muut nimet: {{ $spring->alias }}</h3>
-                                    @endif
+                <div class="row">
+                    @foreach ($springs as $spring)
 
-                                    @if(isset($spring->distance))
-                                        <span class="distance">
+                        <article class="spring col-xs-12 col-sm-6 col-lg-4">
+                            <header>
+                                <h2>{{ $spring->title }}</h2>
+
+                                @if($spring->alias)
+                                    <h3>Muut nimet: {{ $spring->alias }}</h3>
+                                @endif
+                                <hr>
+
+                                @if(isset($spring->distance))
+                                    <span class="distance">
 Etäisyys paikasta {{$searchTerm}} <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
-                                            {{round($spring->distance, 2)}}km</span>
-                                    @endif
-                                </header>
+                                        {{round($spring->distance, 2)}}km</span>
+                                @endif
+                            </header>
+                            <div class="wrap">
 
-                                <div class="spring-short-description col-xs-6">
 
-                                    {!! $spring->short_description !!}
-                                    <a href="/lahteet/{{ $spring->slug }}" class="btn btn-primary">Lue lisää <i
-                                                class="fa fa-arrow-circle-right"></i>
-                                    </a>
 
-                                </div>
+                            <div class="spring-short-description">
+
+                                <p>{{ str_limit(strip_tags($spring->short_description), 300)}}</p>
+                                <hr>
+                                <a href="/lahteet/{{ $spring->slug }}" class="btn btn-primary">Lue lisää <i
+                                            class="fa fa-arrow-circle-right"></i>
+                                </a>
+
+                            </div>
                             </div>
                         </article>
-                        <div class="col-xs-12">
-                            <hr>
-                        </div>
-                    </div>
-                @endforeach
+
+
+                    @endforeach
+                </div>
             </div>
 
             <div class="col-xs-12">

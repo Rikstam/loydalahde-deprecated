@@ -9,6 +9,7 @@
   border-radius: 0;
   .navbar-nav > li > a {
     color: $navbar-font;
+    letter-spacing: 1px;
     &:hover {
       color: $navbar-font;
       text-decoration: underline;

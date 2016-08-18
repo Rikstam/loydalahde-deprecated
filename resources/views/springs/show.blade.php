@@ -13,14 +13,15 @@
     <div class="container">
         <div class="row">
             <article class="single-spring col-xs-12 col-md-8 col-md-offset-2">
-                <h1>{{ $spring->title }}</h1>
-                <h2>{{ $spring->alias }}</h2>
-                @if ($spring->image)
-                    <img src="{{ url('/')}}/storage/{{ $spring->image }}" alt="{{ $spring->title }}" class="img-responsive">
-                @else
-                    <img src="http://placehold.it/450x250" alt="" class="img-responsive">
-                @endif
-                <hr>
+                <header>
+                    <h1>{{ $spring->title }}</h1>
+                    <h2>{{ $spring->alias }}</h2>
+                    @if ($spring->image)
+                        <img src="{{ url('/')}}/storage/{{ $spring->image }}" alt="{{ $spring->title }}"
+                             class="img-responsive">
+                    @endif
+                    <hr>
+                </header>
                 {!! $spring->description !!}
 
 
@@ -30,20 +31,20 @@
     </div>
     <div class="container-fluid map-container">
         <div class="row">
-    <section class="map col-xs-12">
-        @if ($spring->latitude && $spring->longitude)
-            <div ng-controller="SingleSpringController">
-                <leaflet class="single-map"
-                         markers="{m1: {lat: {{$spring->latitude}},lng: {{$spring->longitude}}  } }"
-                         center="{lat: {{$spring->latitude}}, lng: {{$spring->longitude}}, zoom: 10}"
-                         defaults="defaults"
-                         width="100%"
-                         height="580px">
+            <section class="map col-xs-12">
+                @if ($spring->latitude && $spring->longitude)
+                    <div ng-controller="SingleSpringController">
+                        <leaflet class="single-map"
+                                 markers="{m1: {lat: {{$spring->latitude}},lng: {{$spring->longitude}}  } }"
+                                 center="{lat: {{$spring->latitude}}, lng: {{$spring->longitude}}, zoom: 10}"
+                                 defaults="defaults"
+                                 width="100%"
+                                 height="580px">
 
-                </leaflet>
-            </div>
-        @endif
-    </section>
-    </div>
+                        </leaflet>
+                    </div>
+                @endif
+            </section>
+        </div>
     </div>
 @endsection
