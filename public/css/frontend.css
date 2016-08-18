@@ -5846,7 +5846,16 @@ Version: 1.0
 body {
   font-family: "Cabin", sans-serif;
   background-color: #f7f7f7;
-  color: #777777; }
+  color: #777777;
+  display: -ms-flexbox;
+  display: flex;
+  min-height: 100vh;
+  -ms-flex-direction: column;
+  flex-direction: column; }
+
+.main-content {
+  -ms-flex: 1;
+  flex: 1; }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: "Raleway", sans-serif;

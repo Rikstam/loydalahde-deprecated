@@ -2,8 +2,15 @@ body {
   font-family: $body-font-stack, sans-serif;
   background-color: rgb(247, 247, 247);
   color: rgb(119,119,119);
-}
 
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+
+}
+.main-content {
+  flex: 1;
+}
 h1, h2, h3, h4, h5, h6 {
   font-family: $header-font-stack, sans-serif;
   font-weight: 700;
