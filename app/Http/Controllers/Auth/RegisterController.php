@@ -68,4 +68,15 @@ class RegisterController extends Controller
             'password' => bcrypt($data['password']),
         ]);
     }
+
+    /**
+     * Show the application registration form.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function showRegistrationForm()
+    {
+        //return view('auth.register');
+        abort(404);  //this will throw a page not found exception
+    }
 }

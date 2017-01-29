@@ -36,10 +36,18 @@ class AdminTest extends TestCase
         $this->assertRedirectedTo('/login');
     }
 
-    public function testRegistrationIsDisabled()
+    public function testRegistrationIsDisabledAndRedirectsToFrontPage()
     {
         $response = $this->call('GET','/register');
         $this->assertEquals(404, $response->status());
+        //$this->call('GET','/register');
+        //$this->assertRedirectedToAction('PageController@getFrontPage', $parameters = [], $with = []);
+
+        //$tagLine = 'Koska kaikilla on oikeus puhtaaseen veteen';
+
+        //$this->visit('/register')
+          //  ->see($tagLine);
+
     }
 
     public function testSpringsAreIndexedForLoggedInUser()
@@ -110,5 +118,16 @@ class AdminTest extends TestCase
         $this->actingAs($user)
             ->visit('/admin/pages/' . $page->id . '/edit')
             ->see($page->title);
+    }
+
+    public function userLogsOutAndIsredirectedToFrontpage()
+    {
+        $user = factory(App\User::class)->create();
+        $tagLine = 'Koska kaikilla on oikeus puhtaaseen veteen';
+
+        $this->actingAs($user)
+            ->visit('/admin')
+            ->press('Logout')
+            ->see($tagLine);
     }
 }
