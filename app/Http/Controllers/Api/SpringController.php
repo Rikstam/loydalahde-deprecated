@@ -19,17 +19,17 @@ class SpringController extends Controller
      */
     public function index()
     {
-        if (Cache::has('api-springs')) {
-            $springs = Cache::get('springs');
-        } else {
+        //if (Cache::has('api-springs')) {
+          //  $springs = Cache::get('springs');
+        //} else {
             $springs = Spring::where('visibility', true)
             ->whereNotNull('latitude')
             ->whereNotNull('longitude')
             ->select('title','latitude','longitude', 'tested_at', 'status', 'slug')
             ->get();
 
-        Cache::put('api-springs', $springs, 120);
-        }
+        //Cache::put('api-springs', $springs, 120);
+       // }
 
         return $springs->toJson(JSON_NUMERIC_CHECK);
     }
