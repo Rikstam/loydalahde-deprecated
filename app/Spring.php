@@ -3,13 +3,16 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-use Cviebrock\EloquentSluggable\SluggableInterface;
-use Cviebrock\EloquentSluggable\SluggableTrait;
+use Cviebrock\EloquentSluggable\Sluggable;
+use Cviebrock\EloquentSluggable\SluggableScopeHelpers;
 
-class Spring extends Model implements SluggableInterface
+
+class Spring extends Model
 {
 
-    use SluggableTrait;
+    use Sluggable;
+    use SluggableScopeHelpers;
+
     /**
      * The database table used by the model.
      *
@@ -17,11 +20,19 @@ class Spring extends Model implements SluggableInterface
      */
     protected $table = 'springs';
 
-    protected $sluggable = [
-        'build_from' => 'title',
-        'save_to'    => 'slug',
-        'on_update'  => true
-    ];
+    /**
+     * Return the sluggable configuration array for this model.
+     *
+     * @return array
+     */
+    public function sluggable()
+    {
+        return [
+            'slug' => [
+                'source' => 'title'
+            ]
+        ];
+    }
 
     /**
      * The attributes that are mass assignable.
@@ -40,5 +51,10 @@ class Spring extends Model implements SluggableInterface
         'visibility',
         'image'
     ];
+
+    public function images()
+    {
+        return $this->hasMany(Image::class);
+    }
     
 }

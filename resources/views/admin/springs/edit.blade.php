@@ -20,7 +20,7 @@
 
             </table>
 
-            {!! Form::model($spring,['method' => 'PATCH','route' =>['admin.springs.update', $spring->id], 'files' => true, 'class' => 'form-horizontal']) !!}
+            {!! Form::model($spring,['method' => 'PATCH','route' =>['springs.update', $spring->id], 'files' => true, 'class' => 'form-horizontal']) !!}
 
             @include('admin.springs.partials.form',['submitButtonText' => 'Tallenna'])
 

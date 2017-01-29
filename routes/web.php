@@ -12,8 +12,6 @@
 */
 
 
-Route::group(['middleware' => 'web'], function () {
-
     Route::get('/', 'PageController@getFrontPage');
 
     Route::get('usein-kysytyt-kysymykset', function () {
@@ -42,50 +40,14 @@ Route::group(['middleware' => 'web'], function () {
 
     Route::resource('lahteet', 'SpringController', ['only' => ['index', 'show']]);
 
-    /* Route::get('oldsprings', function () {
-         $client = new \GuzzleHttp\Client(['base_uri' => 'http://loydalahde.com/wp-json/']);
-         $response = $client->get('posts?filter[posts_per_page]=-1');
-         $bod = json_decode($response->getBody());
-         //dd($bod);
-         foreach ($bod as $spr) {
-             echo $spr->title;
-         }
-
-         //dd($bod);
-     });
-    */
-
-});
-
-Route::group(['prefix' => 'api', 'namespace' => 'Api'], function () {
-    Route::resource('springs', 'SpringController', ['only' => ['index', 'show']]);
-    Route::get('cities/{name}', 'SearchController@preFetchSearchTerms');
-});
-//Route::auth();
-//Route::get('/home', 'HomeController@index');
-
 //admin routing
 Route::group([
     'prefix' => 'admin',
     'namespace' => 'Admin',
-    'middleware' => ['web', 'auth']
+    'middleware' => ['auth']
 ], function () {
     Route::get('/', 'HomeController@index');
     Route::resource('springs', 'SpringController');
     Route::resource('pages', 'PageController');
 
 });
-
-Route::group(['middleware' => 'web'], function () {
-    Route::auth();
-    //Route::get('/home', 'HomeController@index');
-});
-
-Route::group(['prefix' => 'protected-api', 'middleware' => 'auth:api'], function () {
-    Route::get('users/{user}', function(App\User $user){
-        return $user;
-    });
-
-    // return Auth::guard('api')->user();
-});
-

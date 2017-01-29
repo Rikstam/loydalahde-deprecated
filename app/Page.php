@@ -3,12 +3,14 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-use Cviebrock\EloquentSluggable\SluggableInterface;
-use Cviebrock\EloquentSluggable\SluggableTrait;
+use Cviebrock\EloquentSluggable\Sluggable;
+use Cviebrock\EloquentSluggable\SluggableScopeHelpers;
 
-class Page extends Model implements SluggableInterface
+
+class Page extends Model
 {
-    use SluggableTrait;
+    use Sluggable;
+    use SluggableScopeHelpers;
     /**
      * The database table used by the model.
      *
@@ -16,11 +18,19 @@ class Page extends Model implements SluggableInterface
      */
     protected $table = 'pages';
 
-    protected $sluggable = [
-        'build_from' => 'title',
-        'save_to'    => 'slug',
-        'on_update'  => true
-    ];
+    /**
+     * Return the sluggable configuration array for this model.
+     *
+     * @return array
+     */
+    public function sluggable()
+    {
+        return [
+            'slug' => [
+                'source' => 'title'
+            ]
+        ];
+    }
 
     /**
      * The attributes that are mass assignable.

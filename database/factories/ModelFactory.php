@@ -24,7 +24,7 @@ $factory->define(App\Spring::class, function ($faker) {
     return [
         'title' => $faker->name,
         'alias' => 'multsun lähde',
-        'slug' => 'multsun-lahde',
+        'slug' => $faker->slug(),
         'description' => $faker->text,
         'short_description' => 'Veljesten nimet vanhimmasta nuorimpaan ovat: Juhani, Tuomas, Aapo, Simeoni, Timo, Lauri ja Eero. Ovat heistä Tuomas ja Aapo kaksoispari ja samoin Timo ja Lauri.',
         'status' => 'juomakelpoista',
@@ -33,7 +33,6 @@ $factory->define(App\Spring::class, function ($faker) {
         'latitude' => $faker->latitude,
         'longitude' => $faker->longitude,
         'image' => $faker->imageUrl()
-
     ];
 });
 
@@ -42,5 +41,12 @@ $factory->define(App\Page::class, function ($faker) {
         'title' => $faker->sentence,
         'content' => $faker->text,
         'meta_description' => $faker->text(150)
+    ];
+});
+
+$factory->define(App\Image::class, function ($faker) {
+    return [
+        'path' => $faker->imageUrl,
+        'spring_id' => factory('App\Spring')->create()->id
     ];
 });

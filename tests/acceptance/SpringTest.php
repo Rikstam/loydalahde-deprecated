@@ -33,7 +33,7 @@ class SpringTest extends TestCase
     public function test_it_displays_a_single_spring()
     {
         $spring = factory(Spring::class)->create();
-        $this->visit('lahteet/' . $spring->id)
+        $this->visit('lahteet/' . $spring->slug)
             ->see($spring->title);
     }
 

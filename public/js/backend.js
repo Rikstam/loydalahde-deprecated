@@ -20218,8 +20218,24 @@ var template = Object.freeze({
 });
 
  */
-var adminSection = new Vue({
-    el: '#admin-application'
+
+Vue.config.delimiters = ['${', '}'];
+
+Vue.component('spring-image',{
+    template: '#spring-image-template',
+    props: ['spring']
+});
+
+var vm = new Vue({
+    el: '#admin-application',
+    data: {
+        springs: []
+    },
+    ready: function () {
+       $.get('/admin-api/springs/',function(data){
+           vm.springs = data;
+       });
+    }
 });
 
 $(function() {

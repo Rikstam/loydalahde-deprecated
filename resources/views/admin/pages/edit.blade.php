@@ -20,7 +20,7 @@
 
         </table>
 
-        {!! Form::model($page,['method' => 'PATCH','route' =>['admin.pages.update', $page->id], 'class' => 'form-horizontal']) !!}
+        {!! Form::model($page,['method' => 'PATCH','route' =>['pages.update', $page->id], 'class' => 'form-horizontal']) !!}
 
         @include('admin.pages.partials.form',['submitButtonText' => 'Tallenna sivu'])
 

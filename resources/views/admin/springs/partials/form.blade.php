@@ -135,3 +135,9 @@
         {!! Form::submit($submitButtonText, ['class' => 'btn btn-primary']) !!}
     </div>
 </div>
+
+<pre>${ $data | json }</pre>
+
+<template id="spring-image-template">
+
+</template>

@@ -20,10 +20,12 @@ class DatabaseSeeder extends Seeder
 
         //factory(App\Spring::class,10)->create();
 
-        //$this->call(SpringTableSeeder::class);
+        $this->call(SpringTableSeeder::class);
         $this->call(CityTableSeeder::class);
-        //$this->call(RolesTableSeeder::class);
-       // $this->call(UsersTableSeeder::class);
+        $this->call(PagesTableSeeder::class);
+
+        $this->call(RolesTableSeeder::class);
+        //$this->call(UsersTableSeeder::class);
         Model::reguard();
     }
 }

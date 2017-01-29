@@ -9,23 +9,24 @@ use DB;
 use App\Http\Controllers\Controller;
 use App\Spring;
 use Illuminate\Pagination\Paginator;
+use Illuminate\Support\Facades\Cache;
 
 class SearchController extends Controller
 {
     public function preFetchSearchTerms($searchTerm)
     {
+
         $name = '%' . strtolower($searchTerm) . '%';
-        $cities = DB::select('SELECT c.name, COUNT(s.title) as hits FROM cities as c
+            $cities = DB::select('SELECT c.name, COUNT(s.title) as hits FROM cities as c
         LEFT JOIN springs as s
         ON ST_DWITHIN(ST_MakePoint(c.longitude, c.latitude ), ST_MakePoint(s.longitude, s.latitude), 10000, false)
         WHERE lower(c.name) LIKE ? AND s.visibility = TRUE
         GROUP BY c.name', [$name]);
 
-        $springsByTitle = DB::select('SELECT s.title as name, COUNT(*) as hits
+            $springsByTitle = DB::select('SELECT s.title as name, COUNT(*) as hits
 FROM springs AS s WHERE lower(s.title) LIKE ? AND s.visibility = TRUE GROUP BY s.title', [$name]);
 
-        $results = array_merge($cities, $springsByTitle);
-
+            $results = array_merge($cities, $springsByTitle);
         return ['cities' => $results];
     }
 

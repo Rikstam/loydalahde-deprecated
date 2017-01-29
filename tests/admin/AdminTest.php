@@ -38,8 +38,8 @@ class AdminTest extends TestCase
 
     public function testRegistrationIsDisabled()
     {
-        $this->call('GET','/register');
-        $this->assertRedirectedTo('/');
+        $response = $this->call('GET','/register');
+        $this->assertEquals(404, $response->status());
     }
 
     public function testSpringsAreIndexedForLoggedInUser()

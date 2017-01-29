@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     @if (isset($seoTitle))
     <title>{{ $seoTitle }} - Löydä lähde</title>
+    @elseif (isset($spring->title))
+        <title>{{$spring->title}} - Löydä lähde</title>
     @else
         <title>Löydä lähde</title>
     @endif

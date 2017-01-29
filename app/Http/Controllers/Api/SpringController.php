@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Spring;
+use Illuminate\Support\Facades\Cache;
+
 
 class SpringController extends Controller
 {
@@ -17,11 +19,17 @@ class SpringController extends Controller
      */
     public function index()
     {
-        $springs = Spring::where('visibility', true)
+        if (Cache::has('api-springs')) {
+            $springs = Cache::get('springs');
+        } else {
+            $springs = Spring::where('visibility', true)
             ->whereNotNull('latitude')
             ->whereNotNull('longitude')
             ->select('title','latitude','longitude', 'tested_at', 'status', 'slug')
             ->get();
+
+        Cache::put('api-springs', $springs, 120);
+        }
 
         return $springs->toJson(JSON_NUMERIC_CHECK);
     }

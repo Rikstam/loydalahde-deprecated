@@ -3,9 +3,6 @@
 use Illuminate\Database\Seeder;
 use App\Spring;
 
-//use Faker;
-
-
 class SpringTableSeeder extends Seeder
 {
     /**
@@ -16,9 +13,9 @@ class SpringTableSeeder extends Seeder
     public function run()
     {
 
-        $client = new \GuzzleHttp\Client(['base_uri' => 'http://loydalahde.com/wp-json/']);
+        $client = new \GuzzleHttp\Client(['base_uri' => 'https://loydalahde.com/']);
 
-        $response = $client->get('posts?filter[posts_per_page]=-1');
+        $response = $client->get('api/springs');
 
         //echo $response->getStatusCode();
 
@@ -28,13 +25,15 @@ class SpringTableSeeder extends Seeder
 
             $spring = new Spring();
             $spring->title = $spr->title;
+            $spring->latitude = $spr->latitude;
+            $spring->longitude = $spr->longitude;
+            $spring->tested_at = $spr->tested_at;
+
+
             //$spring->alias = 'Veljespirtin lähde';
-            $spring->status = 'ei tietoa';
 
-
-            $spring->short_description = $spr->excerpt;
-            //$spring->location = new \Phaza\LaravelPostgis\Geometries\Point(61.30337, 23.797609);
-            $spring->description = $spr->content;
+            $spring->short_description =  "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.";
+            $spring->description = "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.";
             //$spring->image = 'Veljespirtti_Ohjeet.png';
             $spring->visibility = true;
 

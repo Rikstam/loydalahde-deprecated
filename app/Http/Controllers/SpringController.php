@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Spring;
+use Illuminate\Support\Facades\Cache;
 
 class SpringController extends Controller
 {
@@ -19,7 +20,12 @@ class SpringController extends Controller
     {
         //return Spring::all();
 
-        $springs = Spring::where('visibility', true)->orderBy('title','asc')->simplePaginate(12);
+        if (Cache::has('index-springs')){
+            $springs = Cache::get('index-springs');
+        } else {
+            $springs = Spring::where('visibility', true)->orderBy('title','asc')->simplePaginate(12);
+            Cache::put('index-springs', $springs, 120);
+        }
 
         $seoTitle = 'Lähteet';
         return view('springs.index', compact('springs', 'seoTitle'));
@@ -51,14 +57,13 @@ class SpringController extends Controller
      * @param  int  $id
      * @return Response
      */
-    public function show($slug_or_id)
+    public function show($slug)
     {
-       // $spring = Spring::findOrFail($id);
-        $spring = Spring::findBySlugOrIdOrFail($slug_or_id);
+        $spring = Spring::whereSlug($slug)->with('images')->first();
+         //   dd($spring);
+        //$seoTitle = $spring->title;
 
-        $seoTitle = $spring->title;
-
-        return view('springs.show', compact('spring', 'seoTitle'));
+        return view('springs.show', compact('spring'));
     }
 
     /**

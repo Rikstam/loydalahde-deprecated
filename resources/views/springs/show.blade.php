@@ -1,15 +1,7 @@
 @extends('app')
 @section('content')
-    <div id="top-banner">
-        <div class="container">
-            <div id="call-to-action">
-                <a name="haku"></a>
-                <div class="slogan">
-                    <h1>Koska kaikilla on oikeus puhtaaseen veteen</h1>
-                </div>
-            </div>
-        </div>
-    </div>
+
+    @include('partials/_top-banner')
     <div class="container">
         <div class="row">
             <article class="single-spring col-xs-12 col-md-8 col-md-offset-2">
@@ -27,7 +19,20 @@
 
                 {!! $spring->description !!}
 
-
+                @if ($spring->images)
+                    <section class="gallery row">
+                        <div class="col-xs-12">
+                            <h3>Kuvia lähteestä</h3>
+                        </div>
+                        @foreach($spring->images as $image)
+                            <div class="col-xs-12 col-sm-6">
+                                <a href="#" class="thumbnail">
+                                    <img src="{{ $image->path }}" alt="">
+                                </a>
+                            </div>
+                        @endforeach
+                    </section>
+                @endif
             </article>
 
         </div>
