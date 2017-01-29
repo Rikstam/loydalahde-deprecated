@@ -20,12 +20,12 @@ class SpringController extends Controller
     {
         //return Spring::all();
 
-        if (Cache::has('index-springs')){
-            $springs = Cache::get('index-springs');
-        } else {
+       // if (Cache::has('index-springs')){
+         //   $springs = Cache::get('index-springs');
+        //} else {
             $springs = Spring::where('visibility', true)->orderBy('title','asc')->simplePaginate(12);
-            Cache::put('index-springs', $springs, 120);
-        }
+          //  Cache::put('index-springs', $springs, 120);
+        //}
 
         $seoTitle = 'Lähteet';
         return view('springs.index', compact('springs', 'seoTitle'));
