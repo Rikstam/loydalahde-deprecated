@@ -11,14 +11,14 @@
 
                     <hr>
                 </header>
-
+{{--
                 @if ($spring->image)
                     <img src="{{ url('/')}}/storage/{{ $spring->image }}" alt="{{ $spring->title }}"
                          class="img-responsive">
                 @endif
-
+--}}
                 {!! $spring->description !!}
-
+{{--
                 @if ($spring->images)
                     <section class="gallery row">
                         <div class="col-xs-12">
@@ -32,7 +32,7 @@
                             </div>
                         @endforeach
                     </section>
-                @endif
+                @endif --}}
             </article>
 
         </div>
