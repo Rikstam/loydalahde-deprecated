@@ -47,7 +47,7 @@ Route::group([
     'middleware' => ['auth']
 ], function () {
     Route::get('/', 'HomeController@index');
-    //Route::resource('springs', 'SpringController');
+    Route::resource('springs', 'SpringController');
     Route::resource('pages', 'PageController');
 
 });
