@@ -44,10 +44,11 @@
 Route::group([
     'prefix' => 'admin',
     'namespace' => 'Admin',
-    'middleware' => ['auth']
+    'middleware' => 'auth'
 ], function () {
-    Route::get('/', 'HomeController@index');
-    Route::resource('springs', 'SpringController');
-    Route::resource('pages', 'PageController');
+    CRUD::resource('spring', 'SpringCrudController');
+    //Route::get('/', 'HomeController@index');
+   // Route::resource('springs', 'SpringController');
+    //Route::resource('pages', 'PageController');
 
 });

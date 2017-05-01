@@ -5,6 +5,8 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use Cviebrock\EloquentSluggable\Sluggable;
 use Cviebrock\EloquentSluggable\SluggableScopeHelpers;
+use Backpack\CRUD\CrudTrait;
+
 
 
 class Spring extends Model
@@ -12,6 +14,7 @@ class Spring extends Model
 
     use Sluggable;
     use SluggableScopeHelpers;
+    use CrudTrait;
 
     /**
      * The database table used by the model.
@@ -56,5 +59,5 @@ class Spring extends Model
     {
         return $this->hasMany(Image::class);
     }
-    
+
 }

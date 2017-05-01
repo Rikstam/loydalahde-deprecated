@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use App\Http\Requests\Request;
 
-class SpringRequest extends Request
+class SpringRequest extends \Backpack\CRUD\app\Http\Requests\CrudRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -33,8 +33,8 @@ class SpringRequest extends Request
             'tested_at' => 'date',
             'latitude' => 'digits_between:5,9',
             'longitude' => 'digits_between:5,9',
-            'visibility' => 'required|in:true,false',
-            'image' => 'image',
+            'visibility' => 'required|in:0,1',
+           // 'image' => 'image',
         ];
     }
 }
