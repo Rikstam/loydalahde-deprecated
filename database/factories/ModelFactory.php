@@ -40,7 +40,9 @@ $factory->define(App\Page::class, function ($faker) {
     return [
         'title' => $faker->sentence,
         'content' => $faker->text,
-        'meta_description' => $faker->text(150)
+        'template' => 'services',
+        'name' => 'A test page'
+
     ];
 });
 

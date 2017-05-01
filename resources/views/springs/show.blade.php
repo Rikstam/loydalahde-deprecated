@@ -13,7 +13,7 @@
                 </header>
 {{--
                 @if ($spring->image)
-                    <img src="{{ url('/')}}/storage/{{ $spring->image }}" alt="{{ $spring->title }}"
+                    <img src="{{ url('/')}}/{{ $spring->image }}" alt="{{ $spring->title }}"
                          class="img-responsive">
                 @endif
 --}}

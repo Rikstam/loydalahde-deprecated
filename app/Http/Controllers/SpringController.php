@@ -59,10 +59,8 @@ class SpringController extends Controller
      */
     public function show($slug)
     {
-        //$spring = Spring::whereSlug($slug)->with('images')->first();
-        $spring = Spring::findBySlug($slug);
-
-        //   dd($spring);
+        $spring = Spring::whereSlug($slug)->with('images')->first();
+          //dd($spring);
         //$seoTitle = $spring->title;
 
         return view('springs.show', compact('spring'));
