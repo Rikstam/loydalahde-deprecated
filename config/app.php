@@ -201,8 +201,6 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View'      => Illuminate\Support\Facades\View::class,
         'Debugbar' => Barryvdh\Debugbar\Facade::class,
-        'Form' => Collective\Html\FormFacade::class,
-        'Html' => Collective\Html\HtmlFacade::class,
         'Gate' => Illuminate\Support\Facades\Gate::class,
         'Notification' => Illuminate\Support\Facades\Notification::class,
 
