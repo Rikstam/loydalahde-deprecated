@@ -32,8 +32,8 @@ class SpringRequest extends \Backpack\CRUD\app\Http\Requests\CrudRequest
             'short_description' => 'string|required',
             'status' => 'required|in:juomakelpoista,ei tietoa,ei juomakelpoista',
             'tested_at' => 'date',
-            'latitude' => 'digits_between:5,9',
-            'longitude' => 'digits_between:5,9',
+            'latitude' => 'regex:/^(\-?\d+(\.\d+)?)$/',
+            'longitude' => 'regex:/^(\-?\d+(\.\d+)?)$/',
             'visibility' => 'required|in:0,1',
            // 'image' => 'image',
         ];
