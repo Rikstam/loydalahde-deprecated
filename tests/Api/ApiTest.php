@@ -6,7 +6,7 @@ use Illuminate\Foundation\Testing\DatabaseTransactions;
 
 use App\Spring;
 
-class ApiTest extends TestCase
+class ApiTest extends BrowserKitTestCase
 {
 
     public function testApiSpringsIndexIsOperational()

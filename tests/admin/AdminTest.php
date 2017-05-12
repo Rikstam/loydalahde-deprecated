@@ -6,7 +6,7 @@ use Illuminate\Foundation\Testing\DatabaseTransactions;
 
 use App\Spring;
 
-class AdminTest extends TestCase
+class AdminTest extends BrowserKitTestCase
 {
 
     use DatabaseTransactions;
@@ -84,7 +84,7 @@ class AdminTest extends TestCase
             ->type('60.226560', 'latitude')
             ->type('25.123636', 'longitude')
             ->check('visibility')
-            ->press('Add')
+            ->press('Save and back')
             ->see('Joku nimi');
     }
 

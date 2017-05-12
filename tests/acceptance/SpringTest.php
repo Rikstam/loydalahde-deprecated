@@ -6,7 +6,7 @@ use Illuminate\Foundation\Testing\DatabaseTransactions;
 
 use App\Spring;
 
-class SpringTest extends TestCase
+class SpringTest extends BrowserKitTestCase
 {
 
     use DatabaseTransactions;

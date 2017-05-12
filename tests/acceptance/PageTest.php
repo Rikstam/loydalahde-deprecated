@@ -6,7 +6,7 @@ use Illuminate\Foundation\Testing\DatabaseTransactions;
 
 use App\Page;
 
-class PageTest extends TestCase
+class PageTest extends BrowserKitTestCase
 {
 
     use DatabaseTransactions;
