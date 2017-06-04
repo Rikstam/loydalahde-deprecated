@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "5cbc1ead4ad391d9a0d82dab7519ddee",
+    "content-hash": "1569f1abe38e36cd18d69b30e4b4fa6b",
     "packages": [
         {
             "name": "almasaeed2010/adminlte",
@@ -171,21 +171,22 @@
         },
         {
             "name": "backpack/pagemanager",
-            "version": "1.1.17",
+            "version": "1.1.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Laravel-Backpack/PageManager.git",
-                "reference": "9ba51b4a997c07b21f3f592f84c1a75801d4aa39"
+                "reference": "3c0e92d3c9744fa3529e739acca8950f9a9abe60"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Laravel-Backpack/PageManager/zipball/9ba51b4a997c07b21f3f592f84c1a75801d4aa39",
-                "reference": "9ba51b4a997c07b21f3f592f84c1a75801d4aa39",
+                "url": "https://api.github.com/repos/Laravel-Backpack/PageManager/zipball/3c0e92d3c9744fa3529e739acca8950f9a9abe60",
+                "reference": "3c0e92d3c9744fa3529e739acca8950f9a9abe60",
                 "shasum": ""
             },
             "require": {
                 "backpack/crud": "^3.0.6",
                 "cviebrock/eloquent-sluggable": "^4.0",
+                "doctrine/dbal": "^2.5.12",
                 "illuminate/support": "~5.1",
                 "php": "~5.5|~7.0"
             },
@@ -232,7 +233,7 @@
                 "presentation website",
                 "wordpress"
             ],
-            "time": "2017-04-06T15:31:33+00:00"
+            "time": "2017-04-18T09:27:56+00:00"
         },
         {
             "name": "backpack/permissionmanager",
