@@ -5,3 +5,4 @@ Homestead.yaml
 .env
 public/build
 vendor
+!resources/views/vendor
