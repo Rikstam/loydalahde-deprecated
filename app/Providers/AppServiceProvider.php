@@ -4,7 +4,8 @@ namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use Laravel\Dusk\DuskServiceProvider;
-
+use App\Models\MenuItem;
+use Illuminate\Support\Facades\View;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -16,6 +17,8 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         //
+          $menuItems = MenuItem::getTree();
+          View::share(compact('menuItems'));
     }
 
     /**
