@@ -12,6 +12,7 @@
 */
     Auth::routes();
 
+    Route::get('navitesti', 'Admin\MenuItemCrudController@getItems');
     Route::get('/', 'PageController@getFrontPage');
 
     Route::get('usein-kysytyt-kysymykset', function () {
@@ -51,4 +52,9 @@ Route::group([
    // Route::resource('springs', 'SpringController');
     //Route::resource('pages', 'PageController');
 
+});
+
+Route::group(['prefix' => 'admin', 'middleware' => ['web', 'auth'], 'namespace' => 'Admin'], function () {
+    // Backpack\MenuCRUD
+    CRUD::resource('menu-item', 'MenuItemCrudController');
 });

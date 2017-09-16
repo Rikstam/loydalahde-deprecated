@@ -46,13 +46,9 @@
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav">
-                        <li class=""><a href="/">Etusivu <span class="sr-only">(current)</span></a></li>
-                        <li><a href="/lahteet">Lähteet</a></li>
-                        <li><a href="/usein-kysytyt-kysymykset">Usein kysytyt kysymykset</a></li>
-                        <li><a href="/missio">Missio</a></li>
-                        <li><a href="/vastuuvapauslauseke">Vastuuvapauslauseke</a></li>
-
-
+                      @foreach ($menuItems as $item)
+                        <li><a href="{{$item->url()}}">{{$item->name}}</a></li>
+                      @endforeach
                     </ul>
                 </div><!-- /.navbar-collapse -->
             </div><!-- /.container-fluid -->
