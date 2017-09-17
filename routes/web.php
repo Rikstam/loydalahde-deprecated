@@ -58,3 +58,6 @@ Route::group(['prefix' => 'admin', 'middleware' => ['web', 'auth'], 'namespace' 
     // Backpack\MenuCRUD
     CRUD::resource('menu-item', 'MenuItemCrudController');
 });
+
+Route::get('{page}/{subs?}', ['uses' => 'PageController@index'])
+    ->where(['page' => '^((?!admin).)*$', 'subs' => '.*']);

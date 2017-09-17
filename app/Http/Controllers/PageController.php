@@ -11,17 +11,22 @@ use Carbon\Carbon;
 
 class PageController extends Controller
 {
-   
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return Response
-     */
-   // public function show($slug_or_id)
-    //{
-        //
-   // }
+
+  public function index($slug)
+  {
+        $page = Page::findBySlug($slug);
+        //dd($page);
+
+        if (!$page)
+        {
+            abort(404, 'Please go back to our <a href="'.url('').'">homepage</a>.');
+        }
+
+        //$this->data['title'] = $page->title;
+        //$this->data['page'] = $page->withFakes();
+
+        return view('pages.'.$page->template, compact('page'));
+    }
 
     /**
      * @return string
