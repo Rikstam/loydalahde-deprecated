@@ -14,7 +14,6 @@ class AddMetadataAndSlugToPagesTable extends Migration
     {
         Schema::table('pages', function (Blueprint $table) {
             $table->string('meta_description', 155)->nullable();
-            $table->string('slug')->nullable();
             $table->boolean('published')->default(false);
         });
     }
@@ -28,7 +27,6 @@ class AddMetadataAndSlugToPagesTable extends Migration
     {
         Schema::table('pages', function (Blueprint $table) {
             $table->dropColumn('meta_description');
-            $table->dropColumn('slug');
             $table->dropColumn('published');
         });
     }
