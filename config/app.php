@@ -152,6 +152,7 @@ return [
         Backpack\CRUD\CrudServiceProvider::class,
         Backpack\PageManager\PageManagerServiceProvider::class,
         Backpack\PermissionManager\PermissionManagerServiceProvider::class,
+        Laravel\Tinker\TinkerServiceProvider::class
     ],
 
     /*
