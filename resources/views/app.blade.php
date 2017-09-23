@@ -46,9 +46,11 @@
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav">
-                      @foreach ($menuItems as $item)
-                        <li><a href="{{$item->url()}}">{{$item->name}}</a></li>
-                      @endforeach
+                        @isset($menuItems)
+                          @foreach ($menuItems as $item)
+                            <li><a href="{{$item->url()}}">{{$item->name}}</a></li>
+                          @endforeach
+                        @endisset
                     </ul>
                 </div><!-- /.navbar-collapse -->
             </div><!-- /.container-fluid -->

@@ -17,8 +17,8 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         //
-          $menuItems = MenuItem::getTree();
-          View::share(compact('menuItems'));
+          //$menuItems = MenuItem::getTree();
+          //View::share(compact('menuItems'));
     }
 
     /**
