@@ -16,9 +16,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
-          //$menuItems = MenuItem::getTree();
-          //View::share(compact('menuItems'));
+          //TODO should this be in a controller?
+          $menuItems = MenuItem::getTree();
+          View::share(compact('menuItems'));
     }
 
     /**
